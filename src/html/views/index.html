@@ -1,0 +1,76 @@
+<% 
+	var data = {
+		<!-- Current date  -->
+		date: `?t=${Date.now(0)}`,
+	  <!-- Title on the button in the footer -->
+	  footer_button: 'Уникальный тур',
+	  <!-- Footer navigation -->
+	  footer_contacts: [
+			{
+				title: 'Подобрать тур',
+				href: '#'
+			},
+			{
+				title: 'НАПИСАТЬ В МЕССЕНДЖЕР',
+				href: '#'
+			},
+			{
+				title: 'Бесплатный звонок',
+				href: '#'
+			}
+	  ]
+	}
+%>
+<%=  _.template(require(INCLUDES_PATH+'header.html'))(data) %>
+	
+	<!-- Start main -->
+	<main class="home-page">
+
+		<!-- Search form -->
+		<label class="search-form container">
+
+			<!-- Search input -->
+			<input required type="text" class="search-form__field" id="search-form">
+
+			<!-- Search label -->
+			<span class="search-form__label">Поиск</span>
+
+			<!-- Search image -->
+			<span class="search-form__icon-wrapper">
+				<img  class="search-form__icon" src="./img/icon/loupe.svg" alt="loupe">
+			</span>
+		</label>
+		
+		<section class="tour-section">
+			<!-- Slider -->
+			<div class="slider container">
+				<% 
+				[
+					{img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+					{img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+					{img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+					{img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'}
+				].forEach(function(item) { %>
+				<div class="slider__card">
+					<!-- Card image -->
+					<img src="./img/<%- item.img %>" alt="tour" class="slider__card-image">
+
+					<!-- Card title -->
+					<h3 class="slider__card-title"><%- item.title %></h3>
+				</div>
+				<% }); %>
+			</div>
+			
+			<!-- Type tour -->
+			<div class="type-tour container">
+				<% 
+				['Экскурсионный', 'Замки', 'Велотур', 'Треккинг', 'Острова', 'Италия', 'Статуи', 'История'].forEach(function(item, i) { %>
+				<div class="type-tour__item <%- (i == 3)? 'type-tour__item_active' : '' %>"><%- item %></div>
+				<% }); %>
+			</div>
+
+		</section>
+	</main>
+	<!-- End main -->
+
+<%= _.template(require(INCLUDES_PATH+'footer.html'))(data) %>
