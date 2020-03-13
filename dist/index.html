@@ -1,8 +1,34 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <title>Guide me</title>
+  
+	<!-- Meta -->
+	<meta name="viewport" content="width=320, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-language" content="ru">
 	
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap&subset=cyrillic" rel="stylesheet">
@@ -10,17 +36,16 @@
 	<!-- Loader -->
 	<!-- <script src="scripts/loader.js"></script>
 	<link href="assets/styles/pages/loader.css" rel="stylesheet" /> -->
-	
-	<!-- Meta -->
-	<meta name="viewport" content="width=320, user-scalable=no">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="content-language" content="ru">
-	
-	<!-- Main styles -->
-	<link rel="preload" href="styles/index.css?t=1584034232973" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="styles/index.css?t=1584034232973"></noscript>
-</head>
 
+  
+  
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  
+
+	<!-- Main styles -->
+	<link rel="preload" href="styles/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="styles/index.css"></noscript>
+</head>
 <body>
 
 	<!-- Start header -->
@@ -33,22 +58,20 @@
   		<span class="main-title__text-min">авторских путешествий</span>
   	</h1>
 		
-		<!-- Hamburger -->
+		
   	<div class="hamburger" onclick="">
-  		<div class="hamburger__item"></div>
-  		<div class="hamburger__item"></div>
-  		<div class="hamburger__item"></div>
-  	</div>
-
-  	<!-- Menu -->
+  <div class="hamburger__item"></div>
+  <div class="hamburger__item"></div>
+  <div class="hamburger__item"></div>
+</div>
   </header>
   <!-- End header -->
 
-	
+
 	<!-- Start main -->
 	<main class="home-page">
 
-		<!-- Search form -->
+		<!-- Start search form -->
 		<label class="search-form container">
 
 			<!-- Search input -->
@@ -59,129 +82,328 @@
 
 			<!-- Search image -->
 			<span class="search-form__icon-wrapper">
-				<img  class="search-form__icon" src="./img/icon/loupe.svg" alt="loupe">
+				<img  class="search-form__icon" src="/img/icon/loupe.svg" alt="loupe">
 			</span>
 		</label>
-		
+    <!-- End search form -->
+
+		<!-- Start white section with tours -->
 		<section class="tour-section">
 			<!-- Slider -->
-			<div class="slider container">
-				
-				<div class="slider__card">
-					<!-- Card image -->
-					<img src="./img/tour1.jpg" alt="tour" class="slider__card-image">
+			<div class="slider container swiper-container">
+        <div class="slider__wrapper swiper-wrapper">
+          
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
 
-					<!-- Card title -->
-					<h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
-				</div>
-				
-				<div class="slider__card">
-					<!-- Card image -->
-					<img src="./img/tour2.jpg" alt="tour" class="slider__card-image">
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
 
-					<!-- Card title -->
-					<h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
-				</div>
-				
-				<div class="slider__card">
-					<!-- Card image -->
-					<img src="./img/tour1.jpg" alt="tour" class="slider__card-image">
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
 
-					<!-- Card title -->
-					<h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
-				</div>
-				
-				<div class="slider__card">
-					<!-- Card image -->
-					<img src="./img/tour2.jpg" alt="tour" class="slider__card-image">
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
 
-					<!-- Card title -->
-					<h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
-				</div>
-				
+            <!-- Card title -->
+            <h3 class="slider__card-title slider__card-title_active">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour1.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/tour2.jpg" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+          </div>
+          
+          
+        </div>
 			</div>
 			
-			<!-- Type tour -->
+			<!-- Types of tour -->
 			<div class="type-tour container">
+        
 				
-				<div class="type-tour__item ">Экскурсионный</div>
+        <!-- Type -->
+				<div class="type-tour__item">Экскурсионный</div>
 				
-				<div class="type-tour__item ">Замки</div>
+        <!-- Type -->
+				<div class="type-tour__item">Замки</div>
 				
-				<div class="type-tour__item ">Велотур</div>
+        <!-- Type -->
+				<div class="type-tour__item">Велотур</div>
 				
-				<div class="type-tour__item type-tour__item_active">Треккинг</div>
+        <!-- Type -->
+				<div class="type-tour__item">Треккинг</div>
 				
-				<div class="type-tour__item ">Острова</div>
+        <!-- Type -->
+				<div class="type-tour__item">Острова</div>
 				
-				<div class="type-tour__item ">Италия</div>
+        <!-- Type -->
+				<div class="type-tour__item">Италия</div>
 				
-				<div class="type-tour__item ">Статуи</div>
+        <!-- Type -->
+				<div class="type-tour__item">Статуи</div>
 				
-				<div class="type-tour__item ">История</div>
+        <!-- Type -->
+				<div class="type-tour__item">История</div>
 				
+        
 			</div>
-
 		</section>
+    <!-- End section with tours -->
 	</main>
 	<!-- End main -->
 
 
 	
+	
 	<!-- Start footer -->
 	<footer class="footer container">
 
-		<!-- Contacts -->
+		<!-- Start contact block -->
 		<nav class="footer-contacts">
 			
+			<!-- Link -->
 	  	<a href="#" class="footer-contacts__button">
+				<!-- Title -->
 	  		<span class="footer-contacts__title">Подобрать тур</span>
+				<!-- Icon -->
 	  		<img class="footer-contacts__arrow" src="/img/icon/arrow-right.svg" alt="arrow">
 	  	</a>
 	    
+			<!-- Link -->
 	  	<a href="#" class="footer-contacts__button">
+				<!-- Title -->
 	  		<span class="footer-contacts__title">НАПИСАТЬ В МЕССЕНДЖЕР</span>
+				<!-- Icon -->
 	  		<img class="footer-contacts__arrow" src="/img/icon/arrow-right.svg" alt="arrow">
 	  	</a>
 	    
+			<!-- Link -->
 	  	<a href="#" class="footer-contacts__button">
+				<!-- Title -->
 	  		<span class="footer-contacts__title">Бесплатный звонок</span>
+				<!-- Icon -->
 	  		<img class="footer-contacts__arrow" src="/img/icon/arrow-right.svg" alt="arrow">
 	  	</a>
 	    
 		</nav>
-		
-		<!-- Navigation -->
+		<!-- End contact block -->
+
+		<!-- Start navigation block -->
 		<nav class="footer-nav">
 			
+			<!-- Link -->
 			<a href="#" class="footer-nav__item">
+				<!-- Icon -->
 				<object type="image/svg+xml" data="/img/icon/catalog.svg" class="footer-nav__image"></object>
+				<!-- Title -->
 				<span class="footer-nav__title">Каталог</span>
 			</a>
 			
+			<!-- Link -->
 			<a href="#" class="footer-nav__item">
+				<!-- Icon -->
 				<object type="image/svg+xml" data="/img/icon/about.svg" class="footer-nav__image"></object>
+				<!-- Title -->
 				<span class="footer-nav__title">О нас</span>
 			</a>
 			
+			<!-- Link -->
 			<a href="#" class="footer-nav__item">
+				<!-- Icon -->
 				<object type="image/svg+xml" data="/img/icon/contacts.svg" class="footer-nav__image"></object>
+				<!-- Title -->
 				<span class="footer-nav__title">Контакты</span>
 			</a>
 			
 		</nav>
-		
-		<!-- Button navigation -->
-		<a href="" class="footer-button">
+		<!-- End navigation block -->
+
+		<!-- Start footer button -->
+		<a href="#" class="footer-button">
+
 			
+
+			<!-- Button title -->
 			<span class="footer-button__title">Уникальный тур</span>
+
+			
+			<!-- Arrow right -->
 			<img class="footer-button__icon" src="/img/icon/arrow-right.svg" alt="arrow">
+			
 		</a>
+		<!-- End footer button -->
 	</footer>
 	<!-- End footer -->
+
 	
-	<!-- Scripts -->
-	<script src="bundle.script.js?t=1584034232973"></script>
+	
+	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	
+
+	<!-- Bundle -->
+	<script src="bundle.script.js"></script>
 </body>
 </html>
+
 

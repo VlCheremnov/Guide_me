@@ -7,29 +7,28 @@ const devMode = process.env.NODE_ENV !== 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 
-// remove readme file
-let removeReadme = item => item.replace(/\..+$/, '').toLowerCase() != 'readme';
+// Html files only
+let htmlOnly = item => /(\.njk)$/.test(item);
 
 // auto page generator
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-  const filteredTemplateFiles = templateFiles.filter(removeReadme);
+  const filteredTemplateFiles = templateFiles.filter(htmlOnly);
 
   return filteredTemplateFiles.map(item => {
-    const parts = item.split('.');
-    const name = parts[0];
-    const extension = parts[1];
+    const extension = 'njk';
+    const name = item.replace(/(\.njk)$/, '');
 
     return new HtmlWebpackPlugin({
       filename: `${name}.html`,
       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
       inject: false,
-      showErrors: false
+      showErrors: null
     })
   })
 };
 
-const htmlPlugins = generateHtmlPlugins('./src/html/views');
+const htmlPlugins = generateHtmlPlugins('./src/html');
 
 module.exports = {
   entry: [  // webpack entry point.
@@ -88,21 +87,24 @@ module.exports = {
         ]
       },
 
-      // html template
+      // nunjucks templates
       {
-        test: /\.html$/,
-        include: path.resolve(__dirname, 'src/html/includes'),
+        test: /\.njk|nunjucks/,
         use: [
           {
             loader: 'html-loader',
             options: {
-               minimize: {
+              minimize: {
+                minimize: false,
                 removeComments: false,
                 collapseWhitespace: false
               }
             }
-          }
-        ],  
+          },
+          { // use html-loader or html-withimg-loader to handle inline resource
+            loader: 'nunjucks-webpack-loader' // add nunjucks-webpack-loader
+          },
+        ]
       },
     ]
   },
@@ -111,17 +113,20 @@ module.exports = {
     new webpack.DefinePlugin({  // plugin to define global constants
 
       // Change the path to the includes folder in the .env file
-      INCLUDES_PATH: JSON.stringify(process.env.INCLUDES_PATH)
+      INCLUDES_PATH: JSON.stringify(process.env.INCLUDES_PATH),
+      DATE: Date.now(0)
     }),
     
     new CleanWebpackPlugin({
+      dry: true,
       cleanOnceBeforeBuildPatterns : []
     }),  // Clear the dist folder
 
     new CopyWebpackPlugin([  
       {  // copy static files
         from: './src/static',
-        to: './'
+        to: './',
+        ignore: ['*.md']
       }
     ])
   ].concat(htmlPlugins), // auto page generator

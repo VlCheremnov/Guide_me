@@ -146,15 +146,13 @@
 	padding-top: 46px
 	background-color: $c-accent
 
-
 // Slider
 .slider
-	display: flex
-	justify-content: space-between
+	overflow: visible
+	&__wrapper
+		display: flex
+		justify-content: space-between
 	&__card
-		margin-right: 22px
-		&:last-child
-			margin-right: 0
 		&-image
 			width: 200px
 			height: 200px
@@ -165,7 +163,7 @@
 			background: $c-main
 			box-shadow: 1px 1px 4px $c-main
 		&-title
-			padding: 13px 6px
+			padding: 13px 28px 13px 6px
 			font-weight: 500
 			font-size: 13px
 			line-height: 16px

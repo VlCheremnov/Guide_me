@@ -1,0 +1,102 @@
+{# Swiper style #}
+{% set custom_links = [{rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css'}]%}
+
+{# Swiper script #}
+{% set custom_scripts = ['https://unpkg.com/swiper/js/swiper.min.js'] %}
+
+{# Footer contacts #}
+{% set footer_contacts = [
+  ['Подобрать тур', '#'], 
+  ['НАПИСАТЬ В МЕССЕНДЖЕР', '#'], 
+  ['Бесплатный звонок', '#']
+]%}
+
+{# Footer button #}
+{% set footer_button = 'Уникальный тур' %}
+
+{# Slider items #}
+{% set slider_items = [
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour1.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'},
+  {img:'tour2.jpg', title:'Треккинг вокруг Монблана. Доломитовые Альпы'}
+]%}
+
+{# Types #}
+{% set types = ['Экскурсионный', 'Замки', 'Велотур', 'Треккинг', 'Острова', 'Италия', 'Статуи', 'История']%}
+
+{# Include header #}
+{% include 'includes/header.njk' %}
+
+	<!-- Start main -->
+	<main class="home-page">
+
+		<!-- Start search form -->
+		<label class="search-form container">
+
+			<!-- Search input -->
+			<input required type="text" class="search-form__field" id="search-form">
+
+			<!-- Search label -->
+			<span class="search-form__label">Поиск</span>
+
+			<!-- Search image -->
+			<span class="search-form__icon-wrapper">
+				<img  class="search-form__icon" src="/img/icon/loupe.svg" alt="loupe">
+			</span>
+		</label>
+    <!-- End search form -->
+
+		<!-- Start white section with tours -->
+		<section class="tour-section">
+			<!-- Slider -->
+			<div class="slider container swiper-container">
+        <div class="slider__wrapper swiper-wrapper">
+          {# Card cycle #}
+          {% for item in slider_items %}
+          <!-- Card -->
+          <div class="slider__card swiper-slide">
+            <!-- Card image -->
+            <img src="/img/{{item.img}}" alt="tour" class="slider__card-image">
+
+            <!-- Card title -->
+            <h3 class="slider__card-title{% if loop.index == 4 %} slider__card-title_active{% endif %}">{{ item.title }}</h3>
+          </div>
+          {% endfor %}
+          {# End cycle #}
+        </div>
+			</div>
+			
+			<!-- Types of tour -->
+			<div class="type-tour container">
+        {# Cycle of tours #}
+				{% for item in types %}
+        <!-- Type -->
+				<div class="type-tour__item">{{ item }}</div>
+				{% endfor %}
+        {# End cycle #}
+			</div>
+		</section>
+    <!-- End section with tours -->
+	</main>
+	<!-- End main -->
+
+{# Include footer #}
+{% include 'includes/footer.njk' %}
+
