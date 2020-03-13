@@ -12,13 +12,13 @@
 		<!-- Start contact block -->
 		<nav class="footer-contacts">
 			{% for title, href in footer_contacts %}
-			<!-- Link -->
-	  	<a href="{{ href }}" class="footer-contacts__button">
-				<!-- Title -->
-	  		<span class="footer-contacts__title">{{ title }}</span>
-				<!-- Icon -->
-	  		<img class="footer-contacts__arrow" src="/img/icon/arrow-right.svg" alt="arrow">
-	  	</a>
+				<!-- Link -->
+				<a href="{{ href }}" class="footer-contacts__button">
+					<!-- Title -->
+					<span class="footer-contacts__title">{{ title }}</span>
+					<!-- Icon -->
+					<img class="footer-contacts__arrow" src="/img/icon/arrow-right.svg" alt="arrow">
+				</a>
 	    {% endfor %}
 		</nav>
 		<!-- End contact block -->
@@ -26,13 +26,13 @@
 		<!-- Start navigation block -->
 		<nav class="footer-nav">
 			{% for item in footer_nav %}
-			<!-- Link -->
-			<a href="{{item.href}}" class="footer-nav__item">
-				<!-- Icon -->
-				<object type="image/svg+xml" data="/img/icon/{{item.svg}}.svg" class="footer-nav__image"></object>
-				<!-- Title -->
-				<span class="footer-nav__title">{{item.title}}</span>
-			</a>
+				<!-- Link -->
+				<a href="{{item.href}}" class="footer-nav__item">
+					<!-- Icon -->
+					<object type="image/svg+xml" data="/img/icon/{{item.svg}}.svg" class="footer-nav__image"></object>
+					<!-- Title -->
+					<span class="footer-nav__title">{{item.title}}</span>
+				</a>
 			{% endfor %}
 		</nav>
 		<!-- End navigation block -->
@@ -41,28 +41,42 @@
 		<a href="#" class="footer-button">
 
 			{%if arrow_left %}
-			<!-- Arrow left -->
-			<img class="footer-button__arrow" src="/img/icon/arrow-left.svg" alt="arrow">
+				<!-- Arrow left -->
+				<img class="footer-button__arrow" src="/img/icon/arrow-left.svg" alt="arrow">
 			{% endif %}
 
 			<!-- Button title -->
 			<span class="footer-button__title">{{ footer_button }}</span>
 
 			{%if not arrow_left %}
-			<!-- Arrow right -->
-			<img class="footer-button__icon" src="/img/icon/arrow-right.svg" alt="arrow">
+				<!-- Arrow right -->
+				<img class="footer-button__icon" src="/img/icon/arrow-right.svg" alt="arrow">
 			{% endif %}
 		</a>
 		<!-- End footer button -->
 	</footer>
 	<!-- End footer -->
 
+	<!-- Google map -->
+	{% if map_enable %}
+		<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA53mlyAZd2RuMH_W4Al7NkT_GQQbjWEDA&callback=initMap" async defer></script>
+	{% endif %}
+
 	{% for src in custom_scripts %}
-	{# Custom scripts #}
-	<script src="{{ src }}"></script>
+		{# Custom scripts #}
+		<script src="{{ src }}"></script>
 	{% endfor %}
 
 	<!-- Bundle -->
-	<script src="bundle.script.js"></script>
+	<script src="bundle.script.js?h={{hash}}"></script>
 </body>
 </html>

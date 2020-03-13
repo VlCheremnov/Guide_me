@@ -1,3 +1,5 @@
+{% set hash = range(1, 999999) | random %}
+
 {# Swiper style #}
 {% set custom_links = [{rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css'}]%}
 
@@ -64,34 +66,40 @@
     <!-- End search form -->
 
 		<!-- Start white section with tours -->
-		<section class="tour-section">
-			<!-- Slider -->
+		<section class="tour-section accent-background">
+			<!-- Start slider -->
 			<div class="slider container swiper-container">
         <div class="slider__wrapper swiper-wrapper">
           {# Card cycle #}
           {% for item in slider_items %}
-          <!-- Card -->
-          <div class="slider__card swiper-slide">
-            <!-- Card image -->
-            <img src="/img/{{item.img}}" alt="tour" class="slider__card-image">
+            <!-- Card -->
+            <div class="slider__card swiper-slide">
+              <!-- Card image -->
+              <img src="/img/{{item.img}}" alt="tour" class="slider__card-image">
 
-            <!-- Card title -->
-            <h3 class="slider__card-title{% if loop.index == 4 %} slider__card-title_active{% endif %}">{{ item.title }}</h3>
-          </div>
+              <!-- Card title -->
+              <h3 class="slider__card-title">{{ item.title }}</h3>
+            </div>
           {% endfor %}
           {# End cycle #}
         </div>
 			</div>
+      <!-- End slider -->
 			
 			<!-- Types of tour -->
 			<div class="type-tour container">
         {# Cycle of tours #}
 				{% for item in types %}
-        <!-- Type -->
-				<div class="type-tour__item">{{ item }}</div>
+          <!-- Type -->
+          <div class="
+            type-tour__item
+            {% if loop.index == 4 %}type-tour__item_active{% endif %}
+          ">{{ item }}</div>
+          {# End type #}
 				{% endfor %}
         {# End cycle #}
 			</div>
+      <!-- End types -->
 		</section>
     <!-- End section with tours -->
 	</main>

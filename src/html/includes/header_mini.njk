@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+{# Include head #}
+{% include 'includes/head.njk' %}
+<body>
+
+	<!-- Start header -->
+  <header class="header header-mini container">
+
+  	<!-- Title -->
+  	<h1 class="header-mini__title">
+      <!-- Location -->
+  		<span>{{ h1[0] }}</span>
+      <!-- Country -->
+  		<span>{{ h1[1] }}</span>
+  	</h1>
+		
+		{# Include hamburger #}
+  	{% include 'includes/hamburger.njk' %}
+  </header>
+  <!-- End header -->

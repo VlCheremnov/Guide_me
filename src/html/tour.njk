@@ -1,0 +1,50 @@
+{% set hash = range(1, 999999) | random %}
+
+{# Swiper style #}
+{% set custom_links = [{rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css'}]%}
+
+{# Swiper script #}
+{% set custom_scripts = ['https://unpkg.com/swiper/js/swiper.min.js'] %}
+
+{# Header title#}
+{% set h1 = ['Треккинг вокруг Монблана', 'Франция, Швейцария'] %}
+
+{% set map_enable = true %}
+
+{# Footer contacts #}
+{% set footer_contacts = [
+  ['ЗАБРОНИРОВАТЬ ЭТОТ ТУР', '#'], 
+  ['НАПИСАТЬ В МЕССЕНДЖЕР', '#'], 
+  ['Бесплатный звонок', '#']
+]%}
+
+{# Footer button #}
+{% set footer_button = 'Уникальный тур' %}
+
+{# Include header #}
+{% include 'includes/header_mini.njk' %}
+
+	<!-- Start main -->
+	<main class="accent-background">
+
+    <!-- Map -->
+    <section class="map" id="map">
+    </section>
+
+    <!-- List with days -->
+    <section class="days container swiper-container">
+      <div class="days__wrapper swiper-wrapper">
+        {% for i in range(1, 50) %}
+          <div class="days__item swiper-slide">День-{{i}}</div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Section -->
+	</main>
+	<!-- End main -->
+  <div class="test">{{hash}}</div>
+
+{# Include footer #}
+{% include 'includes/footer.njk' %}
+

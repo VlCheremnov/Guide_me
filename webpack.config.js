@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 const fs = require('fs');
 
 // Html files only
@@ -25,7 +26,7 @@ function generateHtmlPlugins(templateDir) {
       inject: false,
       showErrors: null
     })
-  })
+  }).concat([new HtmlBeautifyPlugin()]);
 };
 
 const htmlPlugins = generateHtmlPlugins('./src/html');

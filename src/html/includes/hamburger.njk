@@ -1,5 +1,29 @@
+{# List of links #}
+{% set links = [
+  ['О нас', '#'], 
+  ['Главная', '#'], 
+  ['Каталог', '#'], 
+  ['Контакты', '#'],
+  ['Оставить заявку', '#']
+] %}
+
+<!-- Hamburger -->
 <div class="hamburger" onclick="">
   <div class="hamburger__item"></div>
   <div class="hamburger__item"></div>
   <div class="hamburger__item"></div>
 </div>
+
+<!-- Start menu in the header -->
+<!-- <div class="menu"> -->
+
+  <!-- Navigation block -->
+  <!-- <nav class="menu__nav">
+    {% for title, href in links%}
+    <a href="{{href}}">{{title}}</a>
+    {% endfor %}
+  </nav>
+
+  <div class="menu__before" onclick=""></div>
+</div> -->
+<!-- End menu in the header -->
