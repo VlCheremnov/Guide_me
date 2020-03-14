@@ -66,30 +66,13 @@
 // Footer
 .footer
 	display: block
-	padding: 33px 0
-
-	// Contacts
-	&-contacts
-		&__button
-			display: flex
-			align-items: center
-			padding: 18px 0	
-		&__title
-			padding-right: 20px
-
-			font-weight: 500
-			text-transform: uppercase
-			color: $c-accent
+	padding: 36px 0 33px
 
 	// Navigation
 	&-nav
 		display: flex
 		justify-content: space-between
 		width: 100%
-		margin: 51px 0 41px
-	
-		border-radius: 4px
-		background: $c-accent
 		&__item
 			display: flex
 			justify-content: space-between
@@ -101,7 +84,11 @@
 		&__title
 			font-weight: 500
 			text-align: center
-			color: $c-main
+			color: $c-accent
+
+	// Contacts
+	&-contacts
+		padding: 30px 0 34px
 
 	// Footer button
 	&-button
@@ -117,14 +104,17 @@
 		&__title, &__icon
 			padding: 0 8px
 
-// Search form
-.search-form
-	$icon-width: 49px
-	$input_padding: 10px
+// Input & button
+$icon-width: 49px
+$input_padding: 10px
 
+.input,
+.button
 	display: flex
 	justify-content: space-between
 	align-items: center
+	line-height: 48px
+	margin-top: 10px
 
 	position: relative
 
@@ -132,16 +122,19 @@
 	background: $c-accent
 
 	color: $c-main
-	letter-spacing: 0.1em
-	&__label
-		position: absolute
-		top: 50%
-		left: calc(50% - #{$icon-width / 2 + #{$input_padding}})
-		transform: translatez(0) translate(-50%, -50%)
-
-		transition: opacity .2s ease
-
-		z-index: 0
+	font-weight: 500
+	font-size: 13px
+	text-align: center
+	&:first-child
+		margin-top: 0
+	&_upper
+		text-transform: uppercase
+	&_spacing
+		letter-spacing: 0.1em
+	&_shadow
+		box-shadow: 0px 1px 4px $c-main
+	&__title, &__field
+		flex-grow: 1
 	&__icon-wrapper
 		display: flex
 		justify-content: center
@@ -151,6 +144,24 @@
 		flex: 0 0 auto
 	&__icon
 		fill: $c-main
+
+// Button
+.button
+	&_active
+		background: $c-main
+		color: $c-accent
+
+// Input
+.input
+	&__label
+		position: absolute
+		top: 50%
+		left: calc(50% - #{$icon-width / 2 + #{$input_padding}})
+		transform: translatez(0) translate(-50%, -50%)
+
+		transition: opacity .2s ease
+
+		z-index: 0
 	&__field
 		box-sizing: border-box
 		width: 100%
@@ -165,6 +176,7 @@
 	&__field:focus ~ &__label, &__field:valid ~ &__label
 		opacity: 0
 
+// Section with tour
 .tour-section
 	margin-top: 47px
 	padding-top: 46px
@@ -197,30 +209,17 @@
 	display: flex
 	justify-content: space-between
 	flex-wrap: wrap
-	padding: 23px 0 29px
+	padding: 13px 0 39px
 	&__item
 		height: min-content
 		line-height: 48px
-
-		box-shadow: 0px 1px 4px $c-main
-		border-radius: 4px
-
-		color: $c-main
-		text-align: center
-		font-weight: 500
-
+		margin-top: 10px !important
 		&:nth-child(2n)
 			margin-left: 10px
-			margin-bottom: 10px
-		
 		&:nth-child(4n + 2), &:nth-child(4n + 3)
 			flex-grow: 1
-		
 		&:nth-child(4n), &:nth-child(4n + 1)
 			width: 181px
-		&_active
-			background-color: $c-main
-			color: $c-accent
 
 // Tour list
 .tour-list

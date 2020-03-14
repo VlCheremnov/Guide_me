@@ -1,4 +1,7 @@
-	{# Array with links #}
+{# Current version #}
+{% set version = range(1, 99999) | random %}
+
+{# Array with links #}
 	{%
 		set footer_nav = [
 			{href:'#', title:'Каталог', svg:'catalog'},
@@ -9,22 +12,9 @@
 	<!-- Start footer -->
 	<footer class="footer container">
 
-		<!-- Start contact block -->
-		<nav class="footer-contacts">
-			{% for title, href in footer_contacts %}
-				<!-- Link -->
-				<a href="{{ href }}" class="footer-contacts__button">
-					<!-- Title -->
-					<span class="footer-contacts__title">{{ title }}</span>
-					<!-- Icon -->
-					<img class="footer-contacts__arrow" src="/img/icon/arrow-right.svg" alt="arrow">
-				</a>
-	    {% endfor %}
-		</nav>
-		<!-- End contact block -->
-
 		<!-- Start navigation block -->
 		<nav class="footer-nav">
+			{# Start cycle #}
 			{% for item in footer_nav %}
 				<!-- Link -->
 				<a href="{{item.href}}" class="footer-nav__item">
@@ -34,8 +24,22 @@
 					<span class="footer-nav__title">{{item.title}}</span>
 				</a>
 			{% endfor %}
+			{# End cycle #}
 		</nav>
 		<!-- End navigation block -->
+
+		<!-- Start contact block -->
+		<nav class="footer-contacts">
+			{# Start cycle #}
+			{% for title, href in footer_contacts %}
+				<!-- Link -->
+				<a href="{{ href }}" class="button">
+					<span class="button__title">{{ title }}</span>
+				</a>
+	    {% endfor %}
+			{# End cycle #}
+		</nav>
+		<!-- End contact block -->
 
 		<!-- Start footer button -->
 		<a href="#" class="footer-button">
@@ -77,6 +81,6 @@
 	{% endfor %}
 
 	<!-- Bundle -->
-	<script src="bundle.script.js?h={{hash}}"></script>
+	<script src="bundle.script.js?v={{ version }}"></script>
 </body>
 </html>

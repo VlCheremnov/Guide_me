@@ -1,5 +1,3 @@
-{% set hash = range(1, 999999) | random %}
-
 {# Swiper style #}
 {% set custom_links = [{rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css'}]%}
 
@@ -27,23 +25,24 @@
 	<!-- Start main -->
 	<main class="accent-background">
 
-    <!-- Map -->
+    <!-- Google maps -->
     <section class="map" id="map">
     </section>
 
     <!-- List with days -->
     <section class="days container swiper-container">
       <div class="days__wrapper swiper-wrapper">
+        {# Start days cycle #}
         {% for i in range(1, 50) %}
           <div class="days__item swiper-slide">День-{{i}}</div>
         {% endfor %}
+         {# End days cycle #}
       </div>
     </section>
 
     <!-- Section -->
 	</main>
 	<!-- End main -->
-  <div class="test">{{hash}}</div>
 
 {# Include footer #}
 {% include 'includes/footer.njk' %}

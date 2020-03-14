@@ -1,5 +1,3 @@
-{% set hash = range(1, 999999) | random %}
-
 {# Swiper style #}
 {% set custom_links = [{rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css'}]%}
 
@@ -50,17 +48,17 @@
 	<main class="home-page">
 
 		<!-- Start search form -->
-		<label class="search-form container">
+		<label class="input container">
 
-			<!-- Search input -->
-			<input required type="text" class="search-form__field" id="search-form">
+			<!-- Input input -->
+			<input required type="text" class="input__field" id="search-form">
 
-			<!-- Search label -->
-			<span class="search-form__label">Поиск</span>
+			<!-- Input label -->
+			<span class="input__label">Поиск</span>
 
-			<!-- Search image -->
-			<span class="search-form__icon-wrapper">
-				<img  class="search-form__icon" src="/img/icon/loupe.svg" alt="loupe">
+			<!-- Input image -->
+			<span class="input__icon-wrapper">
+				<img  class="input__icon" src="/img/icon/loupe.svg" alt="loupe">
 			</span>
 		</label>
     <!-- End search form -->
@@ -91,10 +89,9 @@
         {# Cycle of tours #}
 				{% for item in types %}
           <!-- Type -->
-          <div class="
-            type-tour__item
-            {% if loop.index == 4 %}type-tour__item_active{% endif %}
-          ">{{ item }}</div>
+          <div class="type-tour__item button button_shadow {% if loop.index == 4 %}button_active{% endif %}">
+            <div class="button__title">{{ item }}</div>
+          </div>
           {# End type #}
 				{% endfor %}
         {# End cycle #}

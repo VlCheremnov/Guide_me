@@ -1,3 +1,6 @@
+{# Current version #}
+{% set version = range(1, 99999) | random %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -21,6 +24,6 @@
   {% endfor %}
 
 	<!-- Main styles -->
-	<link rel="preload" href="styles/index.css?h={{hash}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="styles/index.css?h={{hash}}"></noscript>
+	<link rel="preload" href="styles/index.css?v={{version}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="styles/index.css?v={{version}}"></noscript>
 </head>

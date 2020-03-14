@@ -1,5 +1,6 @@
 let mySwiper, days_options, slider_options;
 
+// Main slider options
 slider_options = {
   loop: false,
   // Derection
@@ -11,7 +12,9 @@ slider_options = {
   // Duration of transition between slides (in ms)
   speed: 500
 };
+// End options
 
+// Days slider options
 days_options = {
   loop: false,
   // 	Slides will not have fixed positions
@@ -27,7 +30,9 @@ days_options = {
   // Duration of transition between slides (in ms)
   speed: 500
 };
+// End options
 
+// Initialize the slider
 if (Swiper) {
   new Swiper ('.slider.swiper-container', slider_options);
   new Swiper ('.days.swiper-container', days_options);
