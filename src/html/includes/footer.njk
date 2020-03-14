@@ -61,8 +61,8 @@
 	</footer>
 	<!-- End footer -->
 
-	<!-- Google map -->
 	{% if map_enable %}
+		<!-- Google map -->
 		<script>
       var map;
       function initMap() {
@@ -81,7 +81,10 @@
 	{% endfor %}
 
 	<!-- Swiper -->
-	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	<!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
+
+	<!-- Gsap -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script> -->
 
 	<!-- Bundle -->
 	<script src="bundle.script.js?v={{ version }}"></script>

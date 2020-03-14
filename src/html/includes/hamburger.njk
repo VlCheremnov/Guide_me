@@ -15,15 +15,40 @@
 </div>
 
 <!-- Start menu in the header -->
-<!-- <div class="menu"> -->
+<div class="menu">
 
-  <!-- Navigation block -->
-  <!-- <nav class="menu__nav">
-    {% for title, href in links%}
-    <a href="{{href}}">{{title}}</a>
-    {% endfor %}
-  </nav>
+  <!-- Start menu header -->
+  <div class="menu__header">
+    <h6 class="menu__title">
+      <span class="menu__title-content">АгенТство</span>
+      <span class="menu__title-content-large">GUIDE ME</span>
+      <span class="menu__title-content">авторских путешествий</span>
+    </h6>
+  </div>
+  <!-- End menu header -->
 
+  <!-- Start body menu -->
+  <div class="menu__body">
+    <!-- Navigation block -->
+    <nav class="menu__nav">
+      {# Start cycle #}
+      {% for title, href in links%}
+        <a class="button button_shadow button_indent" href="{{href}}">
+          <span class="button__title">{{title}}</span>
+        </a>
+      {% endfor %}
+      {# End cycle #}
+    </nav>
+
+    <!-- Copyright -->
+    <div class="menu__copyright">
+      <div>© 2020 Guide me</div>
+      <div>Все права защищены</div>
+    </div>
+  </div>
+  <!-- End body menu -->
+
+  <!-- Blue translucent area -->
   <div class="menu__before" onclick=""></div>
-</div> -->
+</div>
 <!-- End menu in the header -->

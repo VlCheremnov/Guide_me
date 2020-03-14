@@ -1,3 +1,5 @@
+import Swiper from 'swiper';
+
 let mySwiper, days_options, slider_options;
 // let Swiper = Swiper || null;
 
@@ -34,8 +36,6 @@ days_options = {
 // End options
 
 // Initialize the slider
-if (Swiper) {
-  new Swiper ('.slider.swiper-container', slider_options);
-  new Swiper ('.days.swiper-container', days_options);
-};
+new Swiper ('.slider.swiper-container', slider_options);
+new Swiper ('.days.swiper-container', days_options);
 
