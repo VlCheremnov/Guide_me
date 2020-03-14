@@ -112,6 +112,13 @@
 	text-transform: uppercase
 	color: $c-main
 
+// Description
+.description
+	color: $c-main
+	font-weight: 500
+	font-size: 13px
+	line-height: 16px
+
 // Input & button
 $icon-width: 49px
 $input_padding: 10px
@@ -298,16 +305,11 @@ $input_padding: 10px
 		color: $c-main
 
 // Location section
-.location
+.locations
 	padding: 38px 0 15px
-	// Location description
+	// Description
 	&__description
 		margin-top: 23px
-		
-		color: $c-main
-		font-weight: 500
-		font-size: 13px
-		line-height: 16px
 
 	// Cards list
 	&-cards-list
@@ -342,3 +344,27 @@ $input_padding: 10px
 			line-height: 16px
 		&__icon
 			fill: $c-main
+
+// Location slider
+.slider-location
+	position: relative
+	&__item
+		height: 204px
+
+		object-fit: cover
+		object-position: center
+	
+	&__arrow-right, &__arrow-left
+		padding: 20px
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+	&__arrow-left
+		left: 0
+	&__arrow-right
+		right: 0	
+
+// Layout location
+.l-location
+	&__description
+		padding: 16px 0 20px

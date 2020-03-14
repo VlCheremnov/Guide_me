@@ -1,0 +1,50 @@
+{# Header title #}
+{% set h1 = ['Собор Карлскирхе', 'Вена, Австрия'] %}
+
+{# Location cards #}
+{% set location_cards = [
+  {location_name: 'Базилика святого Иштвана', country: 'Будапешт, Венгрия', img: 'location1.jpg'},
+  {location_name: 'Базилика святого Иштвана', country: 'Будапешт, Венгрия', img: 'location2.jpg'},
+  {location_name: 'Базилика святого Иштвана', country: 'Будапешт, Венгрия', img: 'location3.jpg'}
+]%}
+
+{# Footer contacts #}
+{% set footer_contacts = [
+  ['ЗАБРОНИРОВАТЬ ЭТОТ ТУР', '#'], 
+  ['НАПИСАТЬ В МЕССЕНДЖЕР', '#'], 
+  ['Бесплатный звонок', '#'],
+  ['ПОДЕЛИТЬСЯ ЛОКАЦИЕЙ', '#']
+]%}
+
+{# Footer button #}
+{% set footer_button = 'Уникальный тур' %}
+
+{# Include header #}
+{% include 'includes/header_mini.njk' %}
+
+	<!-- Start main -->
+	<main class="accent-background l-location">
+
+    <!-- Slider -->
+    <section class="slider-location">
+      <!-- Slider items -->
+      <img src="/img/location1.jpg" alt="location" class="slider-location__item">
+
+      <!-- Arrows -->
+      <img src="/img/icon/arrow-left.svg" alt="arrow-left" class="slider-location__arrow-left">
+      <img src="/img/icon/arrow-right.svg" alt="arrow-right" class="slider-location__arrow-right">
+    </section>
+
+    <!-- Description -->
+    <section class="description l-location__description container">
+      <p>
+        В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость( относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну с них. В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость( относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. 
+      </p>
+    </section>
+    
+	</main>
+	<!-- End main -->
+
+{# Include footer #}
+{% include 'includes/footer.njk' %}
+
