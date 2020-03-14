@@ -48,7 +48,7 @@
 	<main class="home-page">
 
 		<!-- Start search form -->
-		<label class="input container">
+		<label class="input input_spacing container">
 
 			<!-- Input input -->
 			<input required type="text" class="input__field" id="search-form">
@@ -89,7 +89,7 @@
         {# Cycle of tours #}
 				{% for item in types %}
           <!-- Type -->
-          <div class="type-tour__item button button_shadow {% if loop.index == 4 %}button_active{% endif %}">
+          <div class="type-tour__item button button_shadow {% if loop.index == 4 %}active{% endif %}">
             <div class="button__title">{{ item }}</div>
           </div>
           {# End type #}

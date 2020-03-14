@@ -4,10 +4,18 @@
 {# Swiper script #}
 {% set custom_scripts = ['https://unpkg.com/swiper/js/swiper.min.js'] %}
 
-{# Header title#}
+{# Header title #}
 {% set h1 = ['Треккинг вокруг Монблана', 'Франция, Швейцария'] %}
 
+{# Enable google maps #}
 {% set map_enable = true %}
+
+{# Location cards #}
+{% set location_cards = [
+  {location_name: 'Базилика святого Иштвана', country: 'Будапешт, Венгрия', img: 'location1.jpg'},
+  {location_name: 'Базилика святого Иштвана', country: 'Будапешт, Венгрия', img: 'location2.jpg'},
+  {location_name: 'Базилика святого Иштвана', country: 'Будапешт, Венгрия', img: 'location3.jpg'}
+]%}
 
 {# Footer contacts #}
 {% set footer_contacts = [
@@ -32,15 +40,65 @@
     <!-- List with days -->
     <section class="days container swiper-container">
       <div class="days__wrapper swiper-wrapper">
-        {# Start days cycle #}
+        {# Start cycle #}
         {% for i in range(1, 50) %}
-          <div class="days__item swiper-slide">День-{{i}}</div>
+          <div class="button button_shadow {% if loop.index == 1 %}active{% endif %} swiper-slide"><div class="button__title">День-{{i}}</div></div>
         {% endfor %}
-         {# End days cycle #}
+        {# End cycle #}
       </div>
     </section>
 
-    <!-- Section -->
+    <!-- Start location section -->
+    <section class="location container">
+      <!-- Title -->
+      <h2 class="h2">Локации тура</h2>
+
+      <!-- Start location cards list -->
+      <div class="location-cards-list">
+
+        {# Start cycle #}
+        {% for item in location_cards %}
+          <!-- Card -->
+          <div class="location-card">
+
+            <!-- Image -->
+            <img class="location-card__image" src="/img/{{item.img}}" alt="location">
+
+            <!-- Title wrapper -->
+            <div class="location-card__title-wrapper">
+              <!-- Title -->
+              <h3 class="location-card__title">
+                <!-- Location name -->
+                <span>{{ item.location_name }}</span>
+                <!-- Location country -->
+                <span>{{ item.country }}</span>
+              </h3>
+              <!-- Arrow right -->
+              <svg class="location-card__icon" width="8" height="13" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg"><path d="M7.87931 6.10527L3.64442 0.196182C3.55407 0.0709096 3.42797 5.99365e-07 3.29433 5.75999e-07L0.471073 8.2365e-08C0.285679 4.99496e-08 0.117224 0.137091 0.0409958 0.349818C-0.0342912 0.563727 -0.00323531 0.813091 0.120988 0.985636L4.07261 6.5L0.120986 12.0132C-0.0032373 12.1869 -0.0352343 12.4363 0.0409937 12.649C0.117222 12.8629 0.285676 13 0.47107 13L3.29433 13C3.42796 13 3.55407 12.9279 3.64441 12.805L7.87931 6.89591C8.04023 6.67136 8.04023 6.32864 7.87931 6.10527Z"/></svg>
+            </div>
+          </div>
+          {# End card #}
+        {% endfor %}
+        {# End cycle #}
+      </div>
+      <!-- End location cards list -->
+
+      <!-- Button more -->
+			<div class="button-more button-more_blue container">
+				<span>Показать еще</span>
+				<svg class="button-more__icon" width="13" height="8" viewBox="0 0 13 8" xmlns="http://www.w3.org/2000/svg"><path d="M6.89473 7.87931L12.8038 3.64442C12.9291 3.55407 13 3.42797 13 3.29433L13 0.471073C13 0.285679 12.8629 0.117224 12.6502 0.0409958C12.4363 -0.0342911 12.1869 -0.00323521 12.0144 0.120988L6.5 4.07261L0.986818 0.120988C0.813091 -0.00323573 0.563727 -0.0352327 0.351001 0.0409953C0.137092 0.117223 9.41679e-07 0.285678 9.33894e-07 0.471072L8.15343e-07 3.29433C8.09732e-07 3.42797 0.072091 3.55407 0.195 3.64442L6.10409 7.87931C6.32864 8.04023 6.67136 8.04023 6.89473 7.87931Z" /></svg>
+			</div>
+
+      <!-- Description -->
+      <div class="location__description">
+        <p>
+          В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость( относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну с них. В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость( относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну с них. В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну
+        </p>
+      </div>
+
+    </section>
+    <!-- End location section -->
+    
 	</main>
 	<!-- End main -->
 

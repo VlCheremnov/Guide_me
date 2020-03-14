@@ -104,6 +104,14 @@
 		&__title, &__icon
 			padding: 0 8px
 
+// h2
+.h2
+	font-weight: 600
+	font-size: 13px
+	letter-spacing: 0.1em
+	text-transform: uppercase
+	color: $c-main
+
 // Input & button
 $icon-width: 49px
 $input_padding: 10px
@@ -114,7 +122,6 @@ $input_padding: 10px
 	justify-content: space-between
 	align-items: center
 	line-height: 48px
-	margin-top: 10px
 
 	position: relative
 
@@ -125,14 +132,16 @@ $input_padding: 10px
 	font-weight: 500
 	font-size: 13px
 	text-align: center
-	&:first-child
-		margin-top: 0
 	&_upper
 		text-transform: uppercase
 	&_spacing
 		letter-spacing: 0.1em
 	&_shadow
 		box-shadow: 0px 1px 4px $c-main
+	&_indent
+		margin-top: 10px
+		&:first-child
+			margin-top: 0
 	&__title, &__field
 		flex-grow: 1
 	&__icon-wrapper
@@ -147,7 +156,7 @@ $input_padding: 10px
 
 // Button
 .button
-	&_active
+	&.active
 		background: $c-main
 		color: $c-accent
 
@@ -213,7 +222,7 @@ $input_padding: 10px
 	&__item
 		height: min-content
 		line-height: 48px
-		margin-top: 10px !important
+		margin-top: 10px
 		&:nth-child(2n)
 			margin-left: 10px
 		&:nth-child(4n + 2), &:nth-child(4n + 3)
@@ -287,3 +296,49 @@ $input_padding: 10px
 		font-weight: 500
 		text-align: center
 		color: $c-main
+
+// Location section
+.location
+	padding: 38px 0 15px
+	// Location description
+	&__description
+		margin-top: 23px
+		
+		color: $c-main
+		font-weight: 500
+		font-size: 13px
+		line-height: 16px
+
+	// Cards list
+	&-cards-list
+		margin: 47px 0 23px
+	// Location card
+	&-card
+		margin-top: 47px
+		&:first-child
+			margin-top: 0
+		&__image
+			width: 100%
+			height: 150px
+			border-radius: 4px
+
+			object-fit: cover
+			object-position: center
+			background: $c-main
+			box-shadow: 1px 1px 4px $c-main
+		&__title-wrapper
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 7px 9px 0
+		&__title
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+
+			color: $c-main
+			font-weight: 500
+			font-size: 13px
+			line-height: 16px
+		&__icon
+			fill: $c-main
