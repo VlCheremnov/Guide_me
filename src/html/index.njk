@@ -42,17 +42,19 @@
 	<main class="home-page">
 
 		<!-- Start search form -->
-		<label class="input input_spacing container">
+		<label class="field field_spacing container">
 
-			<!-- Input input -->
-			<input required type="text" class="input__field" id="search-form">
+      <!-- Input wrapper -->
+      <div class="field__wrapper">
+        <!-- Input field -->
+        <input required type="text" class="field__content" id="search-form">
 
-			<!-- Input label -->
-			<span class="input__label">Поиск</span>
+        <!-- Input label -->
+        <span class="field__placeholder">Поиск</span></div>
 
 			<!-- Input image -->
-			<span class="input__icon-wrapper">
-				<img  class="input__icon" src="/img/icon/loupe.svg" alt="loupe">
+			<span class="field__icon-wrapper">
+				<img  class="field__icon" src="/img/icon/loupe.svg" alt="loupe">
 			</span>
 		</label>
     <!-- End search form -->
@@ -83,8 +85,10 @@
         {# Cycle of tours #}
 				{% for item in types %}
           <!-- Type -->
-          <div class="type-tour__item button button_shadow {% if loop.index == 4 %}active{% endif %}">
-            <div class="button__title">{{ item }}</div>
+          <div class="type-tour__item field field_shadow {% if loop.index == 4 %}active{% endif %}">
+            <div class="field__wrapper">
+              <div class="field__content">{{ item }}</div>
+            </div>
           </div>
           {# End type #}
 				{% endfor %}

@@ -19,19 +19,19 @@
 			display: flex
 			justify-content: space-between
 			flex-direction: column
-		&__text-min
-			font-size: 12px
-			line-height: 15px
-			font-weight: normal
-			letter-spacing: 0.12em
-			text-transform: lowercase
 			
-		&__text
+		&__content
 			font-weight: 900
 			font-size: 36px
 			line-height: 44px
 			letter-spacing: 0.06em
 			text-transform: uppercase
+			&-min
+				font-size: 12px
+				line-height: 15px
+				font-weight: normal
+				letter-spacing: 0.12em
+				text-transform: lowercase
 	
 	// Mini header
 	&-mini
@@ -236,18 +236,14 @@
 	line-height: 16px
 
 // Input & button
-$icon-width: 49px
 $input_padding: 10px
+$left_input_padding: 23px
 
-.input,
-.button
+.field
 	display: flex
 	justify-content: space-between
 	align-items: center
-	line-height: 48px
 	padding-top: 1px
-
-	position: relative
 
 	border-radius: 4px
 	background: $c-accent
@@ -256,49 +252,67 @@ $input_padding: 10px
 	font-weight: 500
 	font-size: 13px
 	text-align: center
+	&.active
+		background: $c-main
+		color: $c-accent
+	// Wrapper
+	&__wrapper
+		flex-grow: 1
+		line-height: 47px
+		position: relative
+	// Button upper test
 	&_upper
 		text-transform: uppercase
+	// Button spacing
 	&_spacing
 		letter-spacing: 0.1em
+	// Button shadow
 	&_shadow
 		box-shadow: 0px 1px 4px $c-main
+	// Button indent
 	&_indent
 		margin-top: 10px
 		&:first-child
 			margin-top: 0
-	&__title, &__field
-		flex-grow: 1
+	// Button icon
 	&__icon-wrapper
 		display: flex
 		justify-content: center
 		align-items: center
 		height: 100%
-		width: $icon-width
+		padding-right: 13px
 		flex: 0 0 auto
 	&__icon
 		fill: $c-main
-
-// Button
-.button
-	&.active
-		background: $c-main
-		color: $c-accent
-
-// Input
-.input
-	&__label
+		transform-origin: center
+		&.active
+			transform: rotate(180deg)
+	// Left text
+	&_left &__content
+		display: block
+		width: 100%
+		box-sizing: border-box
+		padding: 0 23px
+	&_left &__placeholder
+		left: 23px
+		transform: translateY(-50%)
+	&_left &__content
+		text-align: left
+	// Label
+	&__placeholder
+		height: 48px
 		position: absolute
 		top: 50%
-		left: calc(50% - #{$icon-width / 2 + #{$input_padding}})
-		transform: translatez(0) translate(-50%, -50%)
-
-		transition: opacity .2s ease
+		left: 50%
+		transform: translate(-50%, -50%)
 
 		z-index: 0
-	&__field
+	// Field
+	&__content
+		flex-grow: 1
 		box-sizing: border-box
 		width: 100%
-		padding-left: $input_padding
+		padding: 0 10px
 		line-height: 48px
 
 		position: relative
@@ -306,7 +320,7 @@ $input_padding: 10px
 		text-align: center
 
 		z-index: 1
-	&__field:focus ~ &__label, &__field:valid ~ &__label
+	&__content:focus ~ &__placeholder, &__content:valid ~ &__placeholder
 		opacity: 0
 
 // Section with tour
@@ -476,3 +490,126 @@ $input_padding: 10px
 .l-location
 	&__description
 		padding: 16px 0 20px
+
+// Request form
+.request-form
+	padding: 49px 0 29px
+	&__footer
+		padding-top: 50px
+	// Form input
+	&__input
+		display: block
+		width: 100%
+		margin-top: 10px
+
+		position: relative
+
+		border-radius: 4px
+		background: $c-main
+
+		color: $c-accent
+		&:first-child
+			margin-top: 0
+
+	&__label
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+		opacity: 1
+
+		transition: opacity .2s ease
+
+		z-index: 1
+
+	&__field
+		width: 100%
+		box-sizing: border-box
+		padding: 0 10px
+		line-height: 48px
+
+		position: relative
+
+		text-align: center
+
+		z-index: 2
+
+	&__field:valid ~ &__label, &__field:focus ~ &__label
+		opacity: 0
+
+// Custom select
+.custom-select
+	margin-top: 10px
+	position: relative
+	color: $c-main
+	&:first-child
+		margin-top: 0
+
+	// Menu custom select
+	&__menu
+		width: 100%
+		box-sizing: border-box
+
+		position: absolute
+		top: calc(100% - 4px)
+		left: 0
+
+		border-bottom-left-radius: 4px
+		border-bottom-right-radius: 4px
+		background: $c-accent
+
+		z-index: 100
+	&__item
+		&:hover, &.active
+			background: $c-accent-alpha
+	
+	// List custom select
+	&_list  &__menu
+		flex-direction: column
+	&_list  &__item
+		box-sizing: border-box
+		width: 100%
+		padding: 1px 23px 0
+		line-height: 44px
+
+	// Buttons custom select
+	&_button &__menu
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		padding: 27px 23px 48px
+	&_button &__item
+		width: 72px
+		line-height: 48px
+		height: min-content
+		padding-top: 1px
+
+		box-shadow: 0px 1px 4px $c-main
+		border-radius: 4px
+
+		text-align: center
+		&:first-child
+			margin-bottom: 10px
+		&:nth-child(7)
+			width: 100%
+			margin-top: 10px
+
+// Request page
+.l-request
+	position: relative
+	
+// Blocker
+.blocker
+	display: none
+	width: 100%
+	height: 100%
+
+	position: absolute
+	top: 0
+	left: 0
+
+	background: $c-main-alpha
+
+	z-index: 10
+			

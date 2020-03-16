@@ -1,10 +1,10 @@
 {# List of links #}
 {% set links = [
   ['О нас', '#'], 
-  ['Главная', '#'], 
-  ['Каталог', '#'], 
+  ['Главная', '/'], 
+  ['Каталог', '/catalog.html'], 
   ['Контакты', '#'],
-  ['Оставить заявку', '#']
+  ['Оставить заявку', '/page_4.html']
 ] %}
 
 <!-- Hamburger -->
@@ -33,8 +33,10 @@
     <nav class="menu__nav">
       {# Start cycle #}
       {% for title, href in links%}
-        <a class="button button_shadow button_indent" href="{{href}}">
-          <span class="button__title">{{title}}</span>
+        <a class="field field_shadow field_indent" href="{{href}}">
+          <div class="field__wrapper">
+            <span class="field__content">{{title}}</span>
+          </div>
         </a>
       {% endfor %}
       {# End cycle #}

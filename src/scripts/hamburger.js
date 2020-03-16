@@ -1,46 +1,40 @@
 import { gsap } from 'gsap';
 
-let tl, menuActive, hamburger, hamburgerItems, menu, title, buttons;
+let tl, menuActive, hamburger, hamburgerItems, menu, menuBefore, title, buttons;
 
-window.onload = () => {
+window.addEventListener('load', ()=> {
   // Variables
   menuActive = false;
   hamburger = document.querySelector('.hamburger:not(.close)');
   hamburgerItems = document.querySelectorAll('.hamburger__item');
   menu = document.querySelector('header .menu');
+  menuBefore = document.querySelector('header .menu__before');
   title = document.querySelectorAll('header .menu__title>*');
   buttons = document.querySelectorAll('header .menu__nav>*');
 
-  // Event click
-  hamburger.onclick = () => {
+  let menuToggle = (close = false) => {
+    if (close) menuActive = true;
     // Turn off the current animation
     if (tl) tl.kill();
     // Gsap timeline
     tl = gsap.timeline();
     
-    // Scroll page
-    window.scrollTo(0, 0);
+    
+    // Open menu
+    if (!menuActive) new MenuAnimation().open();
+    // Close menu
+    else new MenuAnimation().close();
+  };
 
-    if (!menuActive) {  // Open menu
-      // Turn off scroll
-      document.body.style.cssText = 'position: fixed; overflow: hidden';
-
-      // Menu animation
-      new MenuAnimation().open();
-    } else {  // Close menu
-      // Turn on scroll
-      document.body.style.cssText = null;
-
-      // Menu animation
-      new MenuAnimation().close();
-    };
-
-    menuActive = !menuActive;
-  }
-};
+  // Event click
+  hamburger.onclick = () => menuToggle();
+  menuBefore.onclick = () => menuToggle(true);
+});
 
 /* *** Start of function for menu animation *** */
 let MenuAnimation = function () {
+  menuActive = !menuActive;
+  
   return {
     open: this.openMenu,
     close: this.closeMenu
@@ -49,6 +43,12 @@ let MenuAnimation = function () {
 
 // Open menu
 MenuAnimation.prototype.openMenu = function () {
+  // Scroll page
+  window.scrollTo(0, 0);
+
+  // Turn off scroll
+  document.body.style.cssText = 'position: fixed; overflow: hidden';
+
   // Set
   tl.set(menu, {xPercent: 60, opacity: 0, display: 'flex'}, 0)
     .set(title, {opacity: 0}, 0)
@@ -65,6 +65,9 @@ MenuAnimation.prototype.openMenu = function () {
 
 // Close menu
 MenuAnimation.prototype.closeMenu = function () {
+  // Turn on scroll
+  document.body.style.cssText = null;
+
   // Animation
   tl.to(menu, .2, {xPercent: 60, opacity: 0})
     .to(title, .1, {opacity: 0}, 0)

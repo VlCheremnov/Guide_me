@@ -26,7 +26,19 @@ function generateHtmlPlugins(templateDir) {
       inject: false,
       showErrors: null
     })
-  }).concat([new HtmlBeautifyPlugin()]);
+  }).concat([new HtmlBeautifyPlugin(
+    {
+      config: {
+        html: {
+          end_with_newline: true,
+          indent_size: 2,
+          indent_with_tabs: true,
+          indent_inner_html: true,
+          preserve_newlines: false
+        }
+      }
+    })
+  ]);
 };
 
 const htmlPlugins = generateHtmlPlugins('./src/html');

@@ -36,7 +36,11 @@
       <div class="days__wrapper swiper-wrapper">
         {# Start cycle #}
         {% for i in range(1, 50) %}
-          <div class="days__item button button_shadow {% if loop.index == 1 %}active{% endif %} swiper-slide"><div class="button__title">День-{{i}}</div></div>
+          <div class="days__item field field_shadow {% if loop.index == 1 %}active{% endif %} swiper-slide">
+            <div class="field__wrapper">
+              <div class="field__content">День-{{i}}</div>
+            </div>
+          </div>
         {% endfor %}
         {# End cycle #}
       </div>

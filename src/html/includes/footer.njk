@@ -12,34 +12,40 @@
 	<!-- Start footer -->
 	<footer class="footer container">
 
-		<!-- Start navigation block -->
-		<nav class="footer-nav">
-			{# Start cycle #}
-			{% for item in footer_nav %}
-				<!-- Link -->
-				<a href="{{item.href}}" class="footer-nav__item">
-					<!-- Icon -->
-					<object type="image/svg+xml" data="/img/icon/{{item.svg}}.svg" class="footer-nav__image"></object>
-					<!-- Title -->
-					<span class="footer-nav__title">{{item.title}}</span>
-				</a>
-			{% endfor %}
-			{# End cycle #}
-		</nav>
-		<!-- End navigation block -->
+		{% if not footer_nav_hidden %}
+			<!-- Start navigation block -->
+			<nav class="footer-nav">
+				{# Start cycle #}
+				{% for item in footer_nav %}
+					<!-- Link -->
+					<a href="{{item.href}}" class="footer-nav__item">
+						<!-- Icon -->
+						<object type="image/svg+xml" data="/img/icon/{{item.svg}}.svg" class="footer-nav__image"></object>
+						<!-- Title -->
+						<span class="footer-nav__title">{{item.title}}</span>
+					</a>
+				{% endfor %}
+				{# End cycle #}
+			</nav>
+			<!-- End navigation block -->
+		{% endif %}
 
-		<!-- Start contact block -->
-		<nav class="footer-contacts">
-			{# Start cycle #}
-			{% for title, href in footer_contacts %}
-				<!-- Link -->
-				<a href="{{ href }}" class="button button_upper button_indent">
-					<span class="button__title">{{ title }}</span>
-				</a>
-	    {% endfor %}
-			{# End cycle #}
-		</nav>
-		<!-- End contact block -->
+		{% if footer_contacts %}
+			<!-- Start contact block -->
+			<nav class="footer-contacts">
+				{# Start cycle #}
+				{% for title, href in footer_contacts %}
+					<!-- Link -->
+					<a href="{{ href }}" class="field field_upper field_indent">
+						<div class="field__wrapper">
+							<span class="field__content">{{ title }}</span>
+						</div>
+					</a>
+				{% endfor %}
+				{# End cycle #}
+			</nav>
+			<!-- End contact block -->
+		{% endif %}
 
 		<!-- Start footer button -->
 		<a href="#" class="footer-button">
@@ -79,12 +85,6 @@
 		{# Custom scripts #}
 		<script src="{{ src }}"></script>
 	{% endfor %}
-
-	<!-- Swiper -->
-	<!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
-
-	<!-- Gsap -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script> -->
 
 	<!-- Bundle -->
 	<script src="bundle.script.js?v={{ version }}"></script>

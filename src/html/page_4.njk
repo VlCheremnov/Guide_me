@@ -1,0 +1,202 @@
+{# Header title #}
+{% set h1 = ['Треккинг вокруг Монблана', 'Франция, Швейцария'] %}
+
+<!-- Hidd footer -->
+{% set footer_nav_hidden = true %}
+
+{# Footer button #}
+{% set footer_button = 'Уникальный тур' %}
+
+{# Fields list #}
+{% set fields_list = [
+  {type: 'input', title: 'test', image_hidd: true},
+  {
+    type: 'select', 
+    title: 'Куда летим', 
+    class: 'custom-select_list', 
+    field_class: 'shadow, indent, left', 
+    options: [
+      {
+        title: 'Австрия',
+        value: '1'
+      },
+      {
+        title: 'Бельгия',
+        value: '2'
+      },
+      {
+        title: 'Германия',
+        value: '3'
+      },
+      {
+        title: 'Дания',
+        value: '4'
+      },
+      {
+        title: 'Швейцария',
+        value: '5'
+      }
+    ]
+  },
+  {
+    type: 'select', 
+    title: 'Количество человек', 
+    class: 'custom-select_button', 
+    field_class: 'shadow, indent, left', 
+    options: [
+      {
+        title: '1',
+        value: '1'
+      },
+      {
+        title: '2',
+        value: '2'
+      },
+      {
+        title: '3',
+        value: '3'
+      },
+      {
+        title: '4',
+        value: '4'
+      },
+      {
+        title: '5',
+        value: '5'
+      },
+      {
+        title: '6',
+        value: '6'
+      },
+      {
+        title: 'Больше',
+        value: '7'
+      }
+    ]
+  },
+  {
+    type: 'select', 
+    title: 'Количество ночей', 
+    class: 'custom-select_button', 
+    field_class: 'shadow, indent, left', 
+    options: [
+      {
+        title: '3-5',
+        value: '1'
+      },
+      {
+        title: '6-9',
+        value: '2'
+      },
+      {
+        title: '10-14',
+        value: '3'
+      },
+      {
+        title: '3 нед',
+        value: '4'
+      },
+      {
+        title: 'месяц',
+        value: '5'
+      },
+      {
+        title: 'больше',
+        value: '6'
+      }
+    ]
+  },
+  {type: 'input', title: 'Примерный бюджет'}
+] %}
+
+{# Include header #}
+{% include 'includes/header_mini.njk' %}
+
+	<!-- Start main -->
+	<main class="accent-background l-request">
+
+    <!-- Page blocker -->
+    <div class="blocker"></div>
+
+    <!-- Start form -->
+    <form class=" request-form container">
+
+      <!-- Start top part -->
+      <div class="request-form__head">
+        {# Buttons cycle #}
+        {% for item in fields_list %}
+
+          {# Start select check #}
+          {% if item.type == 'select' %}
+            <!-- Select -->
+            <select class="{{item.class}}" title="{{item.title}}" field-class="{{item.field_class}}" custom icon="/img/icon/arrow-down_blue.svg">
+              {% for option in item.options %}
+                <!-- Option -->
+                <option label="{{option.title}}" value="{{option.value}}"></option>
+              {% endfor %}
+            </select>
+          {# End check #}
+
+          {# Start inputs check #}
+          {% elseif item.type == 'input' %}
+            <!-- Input -->
+            <lable class="field block field_indent field_shadow field_left">
+              <div class="field__wrapper">
+                <!-- Field -->
+                <input type="text" class="field__content" required>
+
+                <!-- Label -->
+                <span class="field__placeholder">{{item.title}}</span>
+              </div>
+
+              {% if not item.image_hidd %}
+                <!-- Image -->
+                <span class="field__icon-wrapper">
+                  <img  class="field__icon" src="/img/icon/arrow-down_blue.svg" alt="arrow">
+                </span>
+              {% endif %}
+            </lable>
+          {% endif %}
+          {# End inputs check #}
+
+        {% endfor %}
+        {# End cycle #}
+      </div>
+      <!-- End top part -->
+
+      <!-- Start bottom part -->
+      <div class="request-form__footer">
+
+        <!-- Name -->
+        <label class="field active field_indent">
+          <div class="field__wrapper">
+          <!-- Field -->
+            <input type="text" class="field__content" required>
+
+            <!-- Label -->
+            <span class="field__placeholder">Имя</span>
+          </div>
+        </label>
+
+        <!-- Number -->
+        <label class="field active field_indent">
+          <div class="field__wrapper">
+            <!-- Field -->
+            <input type="tel" class="field__content" required>
+
+            <!-- Label -->
+            <span class="field__placeholder">Телефон</span>
+          </div>
+        </label>
+
+      </div>
+      <!-- End bottom part -->
+    </form>
+    <!-- End form -->
+
+	</main>
+	<!-- End main -->
+
+{# Include footer #}
+{% include 'includes/footer.njk' %}
+

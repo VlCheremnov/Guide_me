@@ -1,8 +1,6 @@
 {# Current version #}
 {% set version = range(1, 99999) | random %}
 
-<!DOCTYPE html>
-<html lang="ru">
 <head>
   <title>Guide me</title>
   
@@ -12,7 +10,7 @@
 	<meta http-equiv="content-language" content="ru">
 	
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=block&subset=cyrillic" rel="stylesheet">
 
 	<!-- Loader -->
 	<!-- <script src="scripts/loader.js"></script>
@@ -20,11 +18,8 @@
 
   {# Custom styles#}
   {% for item in custom_links %}
-  <link rel="{{ item.rel }}" href="{{ item.href }}">
+  	<link rel="{{ item.rel }}" href="{{ item.href }}">
   {% endfor %}
-
-	<!-- Swiper -->
-	<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
 
 	<!-- Main styles -->
 	<link rel="preload" href="styles/index.css?v={{version}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
