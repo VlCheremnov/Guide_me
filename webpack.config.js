@@ -1,9 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-require('dotenv').config()
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 const fs = require('fs');
@@ -44,6 +43,7 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins('./src/html');
 
 module.exports = {
+
   entry: [  // webpack entry point.
     './src/index.js',
     './src/styles/index.sass',
@@ -54,9 +54,10 @@ module.exports = {
     filename: './bundle.script.js'  // name of generated bundle after build
   },
 
-  devtool: "source-map",  // source Maps
+  mode: "production",
 
   module: {  // where we defined file patterns and their loaders
+    
     rules: [
 
       // babel
@@ -94,7 +95,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
+              sourceMap: false
             }
           }
         ]
@@ -123,12 +124,6 @@ module.exports = {
   },
 
   plugins: [  // array of plugins to apply to build chunk
-    new webpack.DefinePlugin({  // plugin to define global constants
-
-      // Change the path to the includes folder in the .env file
-      INCLUDES_PATH: JSON.stringify(process.env.INCLUDES_PATH),
-      DATE: Date.now(0)
-    }),
     
     new CleanWebpackPlugin({
       dry: true,
@@ -151,5 +146,36 @@ module.exports = {
     host: "localhost", // host to run dev-server
     port: 80, // port to run dev-server
     open: false  // open page at server startup
-  } 
+  },
+
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minChunks: 1,
+      automaticNameDelimiter: '~',
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    },
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        extractComments: true,
+        terserOptions: {
+          ecma: 5,
+          ie8: false,
+          compress: true,
+          warnings: true,
+        },
+      }),
+    ]
+  }
 };

@@ -1,24 +1,7 @@
 import Swiper from 'swiper';
 
-let mySwiper, days_options, slider_options;
-// let Swiper = Swiper || null;
-
-// Main slider options
-slider_options = {
-  loop: false,
-  // Derection
-  direction: 'horizontal',
-  // Width slide
-  width: 200,
-  // Distance between slides
-  spaceBetween: 24,
-  // Duration of transition between slides (in ms)
-  speed: 500
-};
-// End options
-
 // Days slider options
-days_options = {
+let days_options = {
   loop: false,
   // 	Slides will not have fixed positions
   freeMode: true,
@@ -27,15 +10,16 @@ days_options = {
   // Derection
   direction: 'horizontal',
   // Width slide
-  width: 74,
+  width: 76,
   // Distance between slides
-  spaceBetween: 10,
+  spaceBetween: 11,
   // Duration of transition between slides (in ms)
   speed: 500
 };
 // End options
+document.addEventListener('DOMContentLoaded', ()=> {
+  // Initialize the slider
+  new Swiper ('.days.swiper-container', days_options);
+})
 
-// Initialize the slider
-new Swiper ('.slider.swiper-container', slider_options);
-new Swiper ('.days.swiper-container', days_options);
 

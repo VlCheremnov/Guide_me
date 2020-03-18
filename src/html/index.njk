@@ -61,31 +61,12 @@
 
 		<!-- Start white section with tours -->
 		<section class="tour-section accent-background">
-			<!-- Start slider -->
-			<div class="slider container swiper-container">
-        <div class="slider__wrapper swiper-wrapper">
-          {# Card cycle #}
-          {% for item in slider_items %}
-            <!-- Card -->
-            <div class="slider__card swiper-slide">
-              <!-- Card image -->
-              <img src="/img/{{item.img}}" alt="tour" class="slider__card-image">
-
-              <!-- Card title -->
-              <h3 class="slider__card-title">{{ item.title }}</h3>
-            </div>
-          {% endfor %}
-          {# End cycle #}
-        </div>
-			</div>
-      <!-- End slider -->
-			
 			<!-- Types of tour -->
 			<div class="type-tour container">
         {# Cycle of tours #}
 				{% for item in types %}
           <!-- Type -->
-          <div class="type-tour__item field field_shadow {% if loop.index == 4 %}active{% endif %}">
+          <div class="type-tour__item field field_shadow {% if loop.index == 1 %}active{% endif %}">
             <div class="field__wrapper">
               <div class="field__content">{{ item }}</div>
             </div>

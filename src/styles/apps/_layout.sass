@@ -12,7 +12,7 @@
 	position: relative
 	// Main header
 	&-main
-		padding: 59px 0
+		padding: 59px 0 61px
 
 		// Main title
 		&__title
@@ -22,9 +22,9 @@
 			
 		&__content
 			font-weight: 900
-			font-size: 36px
-			line-height: 44px
-			letter-spacing: 0.06em
+			font-size: 30px
+			line-height: 33px
+			letter-spacing: 0.12em
 			text-transform: uppercase
 			&-min
 				font-size: 12px
@@ -40,7 +40,7 @@
 			justify-content: center
 			flex-direction: column
 			align-items: flex-start
-			height: 74px
+			height: 73px
 			box-sizing: border-box
 			width: 100%
 			padding-right: 50px
@@ -59,7 +59,7 @@
 
 	position: absolute
 	top: 0
-	right: -20px
+	right: -21px
 
 	z-index: 1001
 	&__item
@@ -76,6 +76,17 @@
 			top: calc(50% - 1px)
 		&:nth-child(3)
 			bottom: 29px
+	&.close
+		right: 0
+	&.close &__item
+		top: 50%
+		bottom: auto
+		&:nth-child(1)
+			transform: translateY(-50%) rotate(45deg)
+		&:nth-child(2)
+			opacity: 0
+		&:nth-child(3)
+			transform: translateY(-50%) rotate(-45deg)
 
 // Hidden menu
 .menu
@@ -126,14 +137,14 @@
 		&-content
 			font-weight: normal
 			font-size: 11px
-			line-height: 13px
+			line-height: 11px
 			letter-spacing: 0.12em
 			text-transform: lowercase
 			&-large
 				font-weight: 900
-				font-size: 24px
+				font-size: 21px
 				line-height: 29px
-				letter-spacing: 0.06em
+				letter-spacing: 0.08em
 	// Body menu
 	&__body
 		display: flex
@@ -143,17 +154,13 @@
 		width: 249px
 		padding: 0 20px 18px
 		box-sizing: border-box
+
 		background: $c-accent
+		border-radius: 2px 0px 0px 0px
 
 	// Menu navigation
 	&__nav
-		display: flex
-		flex-direction: column
-		justify-content: center
-		flex: 1 0 100%
-		height: 100%
-		max-height: 346px
-		padding: 10px 0
+		padding: 49px 0px 10px
 	
 	// Copyright
 	&__copyright
@@ -204,7 +211,7 @@
 
 	// Contacts
 	&-contacts
-		padding: 30px 0 34px
+		padding: 26px 0 42px
 
 	// Footer button
 	&-button
@@ -222,6 +229,7 @@
 
 // h2
 .h2
+	padding-left: 10px
 	font-weight: 600
 	font-size: 13px
 	letter-spacing: 0.1em
@@ -245,6 +253,8 @@ $left_input_padding: 23px
 	align-items: center
 	padding-top: 1px
 
+	position: relative
+
 	border-radius: 4px
 	background: $c-accent
 
@@ -252,6 +262,12 @@ $left_input_padding: 23px
 	font-weight: 500
 	font-size: 13px
 	text-align: center
+
+	transition-property: background, color
+	transition-duration: .2s
+	transition-timing-function: ease
+
+	z-index: 1
 	&.active
 		background: $c-main
 		color: $c-accent
@@ -260,21 +276,21 @@ $left_input_padding: 23px
 		flex-grow: 1
 		line-height: 47px
 		position: relative
-	// Button upper test
+	// Field upper test
 	&_upper
 		text-transform: uppercase
-	// Button spacing
-	&_spacing
+	// Field spacing
+	&_spacing, &_spacing &__placeholder
 		letter-spacing: 0.1em
-	// Button shadow
+	// Field shadow
 	&_shadow
 		box-shadow: 0px 1px 4px $c-main
-	// Button indent
+	// Field indent
 	&_indent
 		margin-top: 10px
 		&:first-child
 			margin-top: 0
-	// Button icon
+	// Field icon
 	&__icon-wrapper
 		display: flex
 		justify-content: center
@@ -298,7 +314,7 @@ $left_input_padding: 23px
 		transform: translateY(-50%)
 	&_left &__content
 		text-align: left
-	// Label
+	// Placeholder
 	&__placeholder
 		height: 48px
 		position: absolute
@@ -307,13 +323,12 @@ $left_input_padding: 23px
 		transform: translate(-50%, -50%)
 
 		z-index: 0
-	// Field
+	// Content
 	&__content
 		flex-grow: 1
 		box-sizing: border-box
 		width: 100%
 		padding: 0 10px
-		line-height: 48px
 
 		position: relative
 
@@ -326,7 +341,7 @@ $left_input_padding: 23px
 // Section with tour
 .tour-section
 	margin-top: 47px
-	padding-top: 46px
+	padding-top: 45px
 
 // Slider
 .slider
@@ -345,7 +360,7 @@ $left_input_padding: 23px
 			background: $c-main
 			box-shadow: 1px 1px 4px $c-main
 		&-title
-			padding: 13px 28px 13px 6px
+			padding: 5px 6px 13px
 			font-weight: 500
 			font-size: 13px
 			line-height: 16px
@@ -388,6 +403,7 @@ $left_input_padding: 23px
 		padding: 10px
 		object-fit: cover
 		object-position: center
+		border-radius: 4px
 	&__title
 		padding-right: 10px
 		font-weight: 500
@@ -403,7 +419,7 @@ $left_input_padding: 23px
 	padding: 20px 0
 	
 	font-weight: 500
-	letter-spacing: 0.05em
+	letter-spacing: 0.1em
 	&__icon
 		fill: $c-accent
 		padding-left: 18px
@@ -425,6 +441,8 @@ $left_input_padding: 23px
 		justify-content: space-between
 	&__item
 		flex-shrink: 0
+		&.active
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 
 // Location section
 .locations
@@ -435,10 +453,10 @@ $left_input_padding: 23px
 
 	// Cards list
 	&-cards-list
-		margin: 47px 0 23px
+		margin: 50px 0 23px
 	// Location card
 	&-card
-		margin-top: 47px
+		margin-top: 45px
 		&:first-child
 			margin-top: 0
 		&__image
@@ -454,7 +472,7 @@ $left_input_padding: 23px
 			display: flex
 			justify-content: space-between
 			align-items: center
-			padding: 7px 9px 0
+			padding: 4px 9px 0
 		&__title
 			display: flex
 			flex-direction: column
@@ -471,10 +489,15 @@ $left_input_padding: 23px
 .slider-location
 	position: relative
 	&__item
-		height: 204px
+		height: 100%
+		transform: translate(0)
 
+		border-radius: 2px 2px 0px 0px
 		object-fit: cover
 		object-position: center
+		&-wrapper
+			height: 204px
+			background: $c-main
 	
 	&__arrow-right, &__arrow-left
 		padding: 20px
@@ -489,54 +512,13 @@ $left_input_padding: 23px
 // Layout location
 .l-location
 	&__description
-		padding: 16px 0 20px
+		padding: 12px 0 20px
 
 // Request form
 .request-form
 	padding: 49px 0 29px
 	&__footer
 		padding-top: 50px
-	// Form input
-	&__input
-		display: block
-		width: 100%
-		margin-top: 10px
-
-		position: relative
-
-		border-radius: 4px
-		background: $c-main
-
-		color: $c-accent
-		&:first-child
-			margin-top: 0
-
-	&__label
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
-
-		opacity: 1
-
-		transition: opacity .2s ease
-
-		z-index: 1
-
-	&__field
-		width: 100%
-		box-sizing: border-box
-		padding: 0 10px
-		line-height: 48px
-
-		position: relative
-
-		text-align: center
-
-		z-index: 2
-
-	&__field:valid ~ &__label, &__field:focus ~ &__label
-		opacity: 0
 
 // Custom select
 .custom-select
@@ -594,6 +576,10 @@ $left_input_padding: 23px
 		&:nth-child(7)
 			width: 100%
 			margin-top: 10px
+	&__title
+		font-style: normal
+		font-weight: 500
+		font-size: 13px
 
 // Request page
 .l-request
@@ -612,4 +598,105 @@ $left_input_padding: 23px
 	background: $c-main-alpha
 
 	z-index: 10
-			
+
+// Policy
+.policy
+	display: flex
+	margin-top: 10px
+	justify-content: space-between
+	width: 100%
+
+	color: $c-accent
+	font-size: 9px
+	line-height: 13px
+	letter-spacing: 0.15px
+
+	&_blue
+		color: $c-main
+	&_blue &__checkbox
+		background: $c-main
+	&_blue &__icon
+		fill: $c-accent
+	&_blue &__underline::before
+		background: $c-accent
+	&__checkbox
+		flex-shrink: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 16px
+		height: 16px
+		margin-right: 15px
+
+		background: $c-accent
+	&__icon
+		fill: $c-main
+		opacity: 0
+	&__content
+		margin-top: -3px
+		padding-right: 8px
+	&__input:checked ~ &__icon
+		opacity: 1
+	
+	&__underline
+		position: relative
+		&::before
+			content: ''
+
+			display: block
+			width: 100%
+			height: 1px
+
+			position: absolute
+			bottom: 0px
+			left: 0
+
+			background: $c-main
+	
+.modal-wrapper 
+	height: 100%
+	&__body
+		height: 100%
+		display: flex
+		align-items: center
+		flex-direction: column
+		justify-content: space-between
+		box-sizing: border-box
+	&__footer
+		margin-top: 30px
+
+	&__title
+		flex-grow: 1
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding: 15px 0 
+
+		text-align: center
+		font-weight: 500
+		letter-spacing: 0.1em
+		text-transform: uppercase
+		font-size: 18px
+
+// Modal 1
+.modal
+	padding-bottom: 95px
+
+// Modal 2
+.modal-2
+	padding-bottom: 34px
+
+	&__title
+		font-size: 28px
+		line-height: 45px
+		letter-spacing: .16em
+	&__min-title
+		font-size: 13px
+		padding-bottom: 23px
+
+// Modal 3
+.modal-3
+	padding-bottom: 65px
+	
+
+		

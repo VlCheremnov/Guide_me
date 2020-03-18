@@ -1,11 +1,12 @@
-import { gsap } from 'gsap';
+import {gsap} from 'gsap';
 
 let tl, menuActive, hamburger, hamburgerItems, menu, menuBefore, title, buttons;
 
-window.addEventListener('load', ()=> {
+document.addEventListener('DOMContentLoaded', ()=> {
   // Variables
   menuActive = false;
   hamburger = document.querySelector('.hamburger:not(.close)');
+  if (!hamburger) return;
   hamburgerItems = document.querySelectorAll('.hamburger__item');
   menu = document.querySelector('header .menu');
   menuBefore = document.querySelector('header .menu__before');

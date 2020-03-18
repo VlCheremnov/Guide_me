@@ -14,20 +14,20 @@
 		<!-- <script src="scripts/loader.js"></script>
 	<link href="assets/styles/pages/loader.css" rel="stylesheet" /> -->
 		<!-- Main styles -->
-		<link rel="preload" href="styles/index.css?v=18575" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" href="styles/index.css?v=41597" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<noscript>
-			<link rel="stylesheet" href="styles/index.css?v=18575"></noscript>
+			<link rel="stylesheet" href="styles/index.css?v=41597"></noscript>
 	</head>
 
-	<body>
+	<body onclick="">
 		<!-- Start header -->
 		<header class="header header-mini container">
 			<!-- Title -->
 			<h1 class="header-mini__title">
 				<!-- Location -->
-				<span>Треккинг вокруг Монблана</span>
+				<span>Подобрать тур</span>
 				<!-- Country -->
-				<span>Франция, Швейцария</span>
+				<span></span>
 			</h1>
 			<!-- Hamburger -->
 			<div class="hamburger" onclick="">
@@ -94,7 +94,7 @@
 			<!-- Page blocker -->
 			<div class="blocker"></div>
 			<!-- Start form -->
-			<form class=" request-form container">
+			<div class=" request-form container">
 				<!-- Start top part -->
 				<div class="request-form__head">
 					<!-- Input -->
@@ -103,7 +103,7 @@
 							<!-- Field -->
 							<input type="text" class="field__content" required>
 							<!-- Label -->
-							<span class="field__placeholder">test</span>
+							<span class="field__placeholder">Город вылета</span>
 						</div>
 					</lable>
 					<!-- Select -->
@@ -151,25 +151,21 @@
 						<!-- Option -->
 						<option label="больше" value="6"></option>
 					</select>
-					<!-- Input -->
-					<lable class="field block field_indent field_shadow field_left">
-						<div class="field__wrapper">
-							<!-- Field -->
-							<input type="text" class="field__content" required>
-							<!-- Label -->
-							<span class="field__placeholder">Примерный бюджет</span>
-						</div>
-						<!-- Image -->
-						<span class="field__icon-wrapper">
-							<img class="field__icon" src="/img/icon/arrow-down_blue.svg" alt="arrow">
-						</span>
-					</lable>
+					<!-- Select -->
+					<select type="input" class="custom-select_button" title="Примерный бюджет" field-class="shadow, indent, left" custom icon="/img/icon/arrow-down_blue.svg">
+						<!-- Option -->
+						<option label="₽" value="1"></option>
+						<!-- Option -->
+						<option label="$" value="2"></option>
+						<!-- Option -->
+						<option label="€" value="3"></option>
+					</select>
 				</div>
 				<!-- End top part -->
 				<!-- Start bottom part -->
 				<div class="request-form__footer">
 					<!-- Name -->
-					<label class="field active field_indent">
+					<label class="field block field_spacing active field_indent">
 						<div class="field__wrapper">
 							<!-- Field -->
 							<input type="text" class="field__content" required>
@@ -178,17 +174,26 @@
 						</div>
 					</label>
 					<!-- Number -->
-					<label class="field active field_indent">
+					<label class="field block field_spacing active field_indent">
 						<div class="field__wrapper">
 							<!-- Field -->
-							<input type="tel" class="field__content" required>
+							<input type="tel" id="phone-mask" data-mask="{+7} (000) 000 00-00" class="field__content" required>
 							<!-- Label -->
 							<span class="field__placeholder">Телефон</span>
 						</div>
 					</label>
+					<label class="policy policy_blue">
+						<div class="policy__checkbox">
+							<input type="checkbox" name="policy" class="policy__input">
+							<svg class="policy__icon" width="12" height="9" viewBox="0 0 12 9" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.8243 0.179484C11.59 -0.0598279 11.2101 -0.0598279 10.9757 0.179484L3.78737 7.5208L1.02428 4.69895C0.789972 4.45964 0.410097 4.45966 0.175746 4.69895C-0.058582 4.93824 -0.058582 5.32619 0.175746 5.5655L3.3631 8.8206C3.59734 9.05989 3.97749 9.05972 4.21163 8.8206L11.8243 1.04606C12.0586 0.806773 12.0586 0.418795 11.8243 0.179484Z" /></svg>
+						</div>
+						<div class="policy__content"> Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных и соглашаюсь c <span class="policy__underline">политикой конфиденциальности.</span>
+						</div>
+					</label>
 				</div>
 				<!-- End bottom part -->
-			</form>
+			</div>
 			<!-- End form -->
 		</main>
 		<!-- End main -->
@@ -197,7 +202,7 @@
 			<!-- Start footer button -->
 			<a href="#" class="footer-button">
 				<!-- Button title -->
-				<span class="footer-button__title">Уникальный тур</span>
+				<span class="footer-button__title">ОТПРАВИТЬ</span>
 				<!-- Arrow right -->
 				<img class="footer-button__icon" src="/img/icon/arrow-right.svg" alt="arrow">
 			</a>
@@ -205,7 +210,7 @@
 		</footer>
 		<!-- End footer -->
 		<!-- Bundle -->
-		<script src="bundle.script.js?v=52907"></script>
+		<script src="bundle.script.js?v=84730"></script>
 	</body>
 
 </html>

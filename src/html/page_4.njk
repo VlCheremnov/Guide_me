@@ -1,15 +1,15 @@
 {# Header title #}
-{% set h1 = ['Треккинг вокруг Монблана', 'Франция, Швейцария'] %}
+{% set h1 = ['Подобрать тур'] %}
 
 <!-- Hidd footer -->
 {% set footer_nav_hidden = true %}
 
 {# Footer button #}
-{% set footer_button = 'Уникальный тур' %}
+{% set footer_button = 'ОТПРАВИТЬ' %}
 
 {# Fields list #}
 {% set fields_list = [
-  {type: 'input', title: 'test', image_hidd: true},
+  {type: 'input', title: 'Город вылета', image_hidd: true},
   {
     type: 'select', 
     title: 'Куда летим', 
@@ -106,7 +106,27 @@
       }
     ]
   },
-  {type: 'input', title: 'Примерный бюджет'}
+  {
+    type: 'select', 
+    select_type: 'input',
+    title: 'Примерный бюджет', 
+    class: 'custom-select_button', 
+    field_class: 'shadow, indent, left', 
+    options: [
+      {
+        title: '₽',
+        value: '1'
+      },
+      {
+        title: '$',
+        value: '2'
+      },
+      {
+        title: '€',
+        value: '3'
+      }
+    ]
+  }
 ] %}
 
 {# Include header #}
@@ -119,7 +139,7 @@
     <div class="blocker"></div>
 
     <!-- Start form -->
-    <form class=" request-form container">
+    <div class=" request-form container">
 
       <!-- Start top part -->
       <div class="request-form__head">
@@ -129,7 +149,7 @@
           {# Start select check #}
           {% if item.type == 'select' %}
             <!-- Select -->
-            <select class="{{item.class}}" title="{{item.title}}" field-class="{{item.field_class}}" custom icon="/img/icon/arrow-down_blue.svg">
+            <select {% if item.select_type == 'input' %} type="input" {% endif %} class="{{item.class}}" title="{{item.title}}" field-class="{{item.field_class}}" custom icon="/img/icon/arrow-down_blue.svg">
               {% for option in item.options %}
                 <!-- Option -->
                 <option label="{{option.title}}" value="{{option.value}}"></option>
@@ -168,7 +188,7 @@
       <div class="request-form__footer">
 
         <!-- Name -->
-        <label class="field active field_indent">
+        <label class="field block field_spacing active field_indent">
           <div class="field__wrapper">
           <!-- Field -->
             <input type="text" class="field__content" required>
@@ -179,19 +199,29 @@
         </label>
 
         <!-- Number -->
-        <label class="field active field_indent">
+        <label class="field block field_spacing active field_indent">
           <div class="field__wrapper">
             <!-- Field -->
-            <input type="tel" class="field__content" required>
+            <input type="tel" id="phone-mask" data-mask="{+7} (000) 000 00-00" class="field__content" required>
 
             <!-- Label -->
             <span class="field__placeholder">Телефон</span>
           </div>
         </label>
 
+        <label class="policy policy_blue">
+          <div class="policy__checkbox">
+            <input type="checkbox" name="policy" class="policy__input">
+            <svg class="policy__icon" width="12" height="9" viewBox="0 0 12 9" xmlns="http://www.w3.org/2000/svg"><path d="M11.8243 0.179484C11.59 -0.0598279 11.2101 -0.0598279 10.9757 0.179484L3.78737 7.5208L1.02428 4.69895C0.789972 4.45964 0.410097 4.45966 0.175746 4.69895C-0.058582 4.93824 -0.058582 5.32619 0.175746 5.5655L3.3631 8.8206C3.59734 9.05989 3.97749 9.05972 4.21163 8.8206L11.8243 1.04606C12.0586 0.806773 12.0586 0.418795 11.8243 0.179484Z"/></svg>
+          </div>
+          <div class="policy__content">
+            Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных и соглашаюсь c <span class="policy__underline">политикой конфиденциальности.</span>
+          </div>
+        </label>
+
       </div>
       <!-- End bottom part -->
-    </form>
+    </div>
     <!-- End form -->
 
 	</main>

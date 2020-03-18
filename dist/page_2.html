@@ -13,20 +13,19 @@
 		<!-- <script src="scripts/loader.js"></script>
 	<link href="assets/styles/pages/loader.css" rel="stylesheet" /> -->
 		<!-- Main styles -->
-		<link rel="preload" href="styles/index.css?v=26274" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" href="styles/index.css?v=41827" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<noscript>
-			<link rel="stylesheet" href="styles/index.css?v=26274"></noscript>
+			<link rel="stylesheet" href="styles/index.css?v=41827"></noscript>
 	</head>
 
-	<body onclick="">
+	<body>
 		<!-- Start header -->
-		<header class="header header-mini container">
+		<header class="header header-main container">
 			<!-- Title -->
-			<h1 class="header-mini__title">
-				<!-- Location -->
-				<span>Собор Карлскирхе</span>
-				<!-- Country -->
-				<span>Вена, Австрия</span>
+			<h1 class="header-main__title">
+				<span class="header-main__content-min">АгенТство</span>
+				<span class="header-main__content">GUIDE ME</span>
+				<span class="header-main__content-min">авторских путешествий</span>
 			</h1>
 			<!-- Hamburger -->
 			<div class="hamburger" onclick="">
@@ -89,21 +88,65 @@
 		</header>
 		<!-- End header -->
 		<!-- Start main -->
-		<main class="accent-background l-location">
-			<!-- Slider -->
-			<section class="slider-location">
-				<!-- Slider items -->
-				<div class="slider-location__item-wrapper">
-					<img src="/img/modal_1.jpg" alt="location" class="slider-location__item">
+		<main class="catalog-page">
+			<!-- Start select menu -->
+			<div class="select container">
+				<!-- Start input -->
+				<div class="field field_spacing">
+					<!-- Title -->
+					<div class="field__wrapper">
+						<div class="field__content">Экскурсионный</div>
+					</div>
+					<!-- Image -->
+					<span class="field__icon-wrapper">
+						<svg class="field__icon" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6.89473 7.87931L12.8038 3.64442C12.9291 3.55407 13 3.42797 13 3.29433L13 0.471073C13 0.285679 12.8629 0.117224 12.6502 0.0409958C12.4363 -0.0342911 12.1869 -0.00323521 12.0144 0.120988L6.5 4.07261L0.986818 0.120988C0.813091 -0.00323573 0.563727 -0.0352327 0.351001 0.0409953C0.137092 0.117223 9.41679e-07 0.285678 9.33894e-07 0.471072L8.15343e-07 3.29433C8.09732e-07 3.42797 0.072091 3.55407 0.195 3.64442L6.10409 7.87931C6.32864 8.04023 6.67136 8.04023 6.89473 7.87931Z" /></svg>
+					</span>
 				</div>
-				<!-- Arrows -->
-				<img src="/img/icon/arrow-left.svg" alt="arrow-left" class="slider-location__arrow-left">
-				<img src="/img/icon/arrow-right.svg" alt="arrow-right" class="slider-location__arrow-right">
+				<!-- End input -->
+			</div>
+			<!-- End select menu -->
+			<!-- Start white section with tours -->
+			<section class="tour-section accent-background">
+				<!-- Tour list -->
+				<div class="tour-list container">
+					<!-- Card -->
+					<div class="tour-list__item card-mini">
+						<!-- Card image -->
+						<img src="/img/tour1.jpg" alt="tour" class="card-mini__image">
+						<!-- Card title -->
+						<h3 class="card-mini__title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+					</div>
+					<!-- Card -->
+					<div class="tour-list__item card-mini">
+						<!-- Card image -->
+						<img src="/img/tour2.jpg" alt="tour" class="card-mini__image">
+						<!-- Card title -->
+						<h3 class="card-mini__title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+					</div>
+					<!-- Card -->
+					<div class="tour-list__item card-mini">
+						<!-- Card image -->
+						<img src="/img/tour1.jpg" alt="tour" class="card-mini__image">
+						<!-- Card title -->
+						<h3 class="card-mini__title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+					</div>
+					<!-- Card -->
+					<div class="tour-list__item card-mini">
+						<!-- Card image -->
+						<img src="/img/tour2.jpg" alt="tour" class="card-mini__image">
+						<!-- Card title -->
+						<h3 class="card-mini__title">Треккинг вокруг Монблана. Доломитовые Альпы</h3>
+					</div>
+				</div>
+				<!-- Button more -->
+				<div class="button-more button-more_blue container">
+					<span>Показать еще</span>
+					<svg class="button-more__icon" width="13" height="8" viewBox="0 0 13 8" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.89473 7.87931L12.8038 3.64442C12.9291 3.55407 13 3.42797 13 3.29433L13 0.471073C13 0.285679 12.8629 0.117224 12.6502 0.0409958C12.4363 -0.0342911 12.1869 -0.00323521 12.0144 0.120988L6.5 4.07261L0.986818 0.120988C0.813091 -0.00323573 0.563727 -0.0352327 0.351001 0.0409953C0.137092 0.117223 9.41679e-07 0.285678 9.33894e-07 0.471072L8.15343e-07 3.29433C8.09732e-07 3.42797 0.072091 3.55407 0.195 3.64442L6.10409 7.87931C6.32864 8.04023 6.67136 8.04023 6.89473 7.87931Z" /></svg>
+				</div>
 			</section>
-			<!-- Description -->
-			<section class="description l-location__description container">
-				<p> В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость( относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну с них. В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. Многих интересовали цены. Многих интересовали цены. Поэтому начну В первые два дня мы забронировали отель в Семеньяке. Это и правда был волшебный отель, учитывая его недорогую стоимость( относительно Бали, кстати 3 тысячи за ночь - это дорого, как оказалось. </p>
-			</section>
+			<!-- End section with tours -->
 		</main>
 		<!-- End main -->
 		<!-- Start footer -->
@@ -138,7 +181,7 @@
 				<!-- Link -->
 				<a href="#" class="field field_upper field_indent">
 					<div class="field__wrapper">
-						<span class="field__content">ЗАБРОНИРОВАТЬ ЭТОТ ТУР</span>
+						<span class="field__content">Подобрать тур</span>
 					</div>
 				</a>
 				<!-- Link -->
@@ -151,12 +194,6 @@
 				<a href="#" class="field field_upper field_indent">
 					<div class="field__wrapper">
 						<span class="field__content">Бесплатный звонок</span>
-					</div>
-				</a>
-				<!-- Link -->
-				<a href="#" class="field field_upper field_indent">
-					<div class="field__wrapper">
-						<span class="field__content">ПОДЕЛИТЬСЯ ЛОКАЦИЕЙ</span>
 					</div>
 				</a>
 			</nav>
@@ -172,7 +209,7 @@
 		</footer>
 		<!-- End footer -->
 		<!-- Bundle -->
-		<script src="bundle.script.js?v=60738"></script>
+		<script src="bundle.script.js?v=34137"></script>
 	</body>
 
 </html>

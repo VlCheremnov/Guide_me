@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" class="modal-wrapper">
+{# Include head #}
+{% include 'includes/head.njk' %}
+<body class="modal-wrapper__body modal">
+  <!-- Hamburger -->
+  <div class="hamburger close">
+    <div class="hamburger__item"></div>
+    <div class="hamburger__item"></div>
+    <div class="hamburger__item"></div>
+  </div>
+
+  <!-- Header -->
+  <h3 class="modal-wrapper__title">
+    <span>Выберите месcенджер</span>
+  </h3>
+
+  <!-- Start form -->
+  <div class="modal-wrapper__form container">
+    <a class="field field_spacing field_indent" target="_blank" href="https://wa.me/79178943490?lang=ru">
+      <div class="field__wrapper">
+        <span class="field__content">Whats app</span>
+      </div>
+    </a>
+
+    <a class="field field_spacing field_indent" target="_blank" href="tg://resolve?domain=guide_m">
+      <div class="field__wrapper">
+        <span class="field__content">Telegram</span>
+      </div>
+    </a>
+  </div>
+  <!-- End form -->
+
+  <!-- Bundle -->
+	<script src="bundle.script.js"></script>
+</body>
+</html>

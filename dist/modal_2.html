@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru" class="modal-wrapper">
+
+	<head>
+		<title>Guide me</title>
+		<!-- Meta -->
+		<meta name="viewport" content="width=320, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="content-language" content="ru">
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=block&subset=cyrillic" rel="stylesheet">
+		<!-- Loader -->
+		<!-- <script src="scripts/loader.js"></script>
+	<link href="assets/styles/pages/loader.css" rel="stylesheet" /> -->
+		<!-- Main styles -->
+		<link rel="preload" href="styles/index.css?v=17945" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript>
+			<link rel="stylesheet" href="styles/index.css?v=17945"></noscript>
+	</head>
+
+	<body class="modal-wrapper__body modal-2">
+		<!-- Hamburger -->
+		<div class="hamburger close">
+			<div class="hamburger__item"></div>
+			<div class="hamburger__item"></div>
+			<div class="hamburger__item"></div>
+		</div>
+		<!-- Header -->
+		<h3 class="modal-wrapper__title">
+			<span class="modal-2__title">Бесплатно</span>
+			<span class="modal-2__min-title">разработаем для вас уникальный ТУР</span>
+		</h3>
+		<!-- Start form -->
+		<div class="modal-wrapper__form container">
+			<!-- Name input -->
+			<label class="field field_spacing field_indent">
+				<div class="field__wrapper">
+					<!-- Field -->
+					<input type="text" class="field__content" required>
+					<!-- Label -->
+					<span class="field__placeholder">Имя</span>
+				</div>
+			</label>
+			<!-- Number input -->
+			<label class="field field_spacing field_indent">
+				<div class="field__wrapper">
+					<!-- Field -->
+					<input type="tel" id="phone-mask" data-mask="{+7} (000) 000 00-00" class="field__content" required>
+					<!-- Label -->
+					<span class="field__placeholder">Телефон</span>
+				</div>
+			</label>
+			<!-- Policy block -->
+			<label class="policy">
+				<div class="policy__checkbox">
+					<input type="checkbox" name="policy" class="policy__input">
+					<svg class="policy__icon" width="12" height="9" viewBox="0 0 12 9" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.8243 0.179484C11.59 -0.0598279 11.2101 -0.0598279 10.9757 0.179484L3.78737 7.5208L1.02428 4.69895C0.789972 4.45964 0.410097 4.45966 0.175746 4.69895C-0.058582 4.93824 -0.058582 5.32619 0.175746 5.5655L3.3631 8.8206C3.59734 9.05989 3.97749 9.05972 4.21163 8.8206L11.8243 1.04606C12.0586 0.806773 12.0586 0.418795 11.8243 0.179484Z" /></svg>
+				</div>
+				<div class="policy__content"> Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных и соглашаюсь c <span class="policy__underline">политикой конфиденциальности.</span></div>
+			</label>
+		</div>
+		<!-- End form -->
+		<!-- Start footer button -->
+		<a href="#" class="modal-wrapper__footer footer-button">
+			<!-- Button title -->
+			<span class="footer-button__title">отправить</span>
+			<!-- Arrow right -->
+			<img class="footer-button__icon" src="/img/icon/arrow-right.svg" alt="arrow">
+		</a>
+		<!-- End footer button -->
+		<!-- Bundle -->
+		<script src="bundle.script.js"></script>
+	</body>
+
+</html>
